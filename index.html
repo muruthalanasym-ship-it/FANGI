@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f1e8">
+  <meta name="description" content="FANGI CARPENTRY creates thoughtful, made-to-measure woodwork—from custom furniture and cabinetry to doors, fit-outs and detailed repairs.">
+  <title>FANGI CARPENTRY — The finest woodworks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Rye&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/fangi-logo.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --ink: #24231f;
+      --muted: #716c62;
+      --paper: #f6f1e8;
+      --cream: #fffdf8;
+      --wood: #9a6037;
+      --wood-dark: #543522;
+      --line: rgba(57, 43, 29, .15);
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', Arial, sans-serif;
+      --display: 'Rye', Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    .topline { height: 5px; background: linear-gradient(90deg, #33271f, #a8734c, #e0c49f, #8b5a39, #33271f); }
+    .site-header { position: relative; z-index: 3; background: rgba(246,241,232,.94); border-bottom: 1px solid var(--line); }
+    .nav-wrap { width: min(1180px, calc(100% - 48px)); min-height: 88px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand img { width: 58px; height: 58px; }
+    .brand-name { font: 1.08rem var(--display); letter-spacing: .08em; color: var(--wood-dark); }
+    .brand-sub { margin-top: 3px; color: var(--muted); font-size: .59rem; letter-spacing: .34em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 34px; }
+    .nav-links a { text-decoration: none; font-size: .84rem; font-weight: 600; transition: color .2s; }
+    .nav-links a:hover { color: var(--wood); }
+    .nav-links .nav-cta { padding: 12px 19px; color: #fffaf3; background: var(--wood-dark); border-radius: 2px; }
+    .nav-links .nav-cta:hover { color: white; background: var(--wood); }
+    .menu-toggle { display: none; padding: 10px; border: 0; background: transparent; color: var(--ink); font-size: 1.5rem; cursor: pointer; }
+
+    .hero { min-height: 620px; display: grid; align-items: center; position: relative; isolation: isolate; overflow: hidden; color: #fffaf3; background: #31291f; }
+    .hero::before { content: ''; position: absolute; z-index: -2; inset: 0; background: url('https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=2200&q=85') center 53% / cover; }
+    .hero::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(28,24,20,.88) 0%, rgba(35,28,21,.73) 45%, rgba(35,28,21,.16) 100%), linear-gradient(0deg, rgba(22,18,14,.32), transparent 55%); }
+    .hero-content { width: min(1180px, calc(100% - 48px)); margin: 0 auto; padding: 100px 0 112px; }
+    .eyebrow { display: flex; align-items: center; gap: 12px; color: #e4c49e; font-size: .71rem; font-weight: 700; letter-spacing: .23em; text-transform: uppercase; }
+    .eyebrow::before { content: ''; width: 34px; height: 1px; background: currentColor; }
+    h1 { max-width: 700px; margin: 22px 0 17px; font: 600 clamp(3.2rem, 7.3vw, 6.4rem)/.98 var(--serif); letter-spacing: -.045em; }
+    h1 .wood-word { display: block; margin-top: 12px; color: #d3a678; font: clamp(2.4rem, 5.2vw, 4.65rem)/1.08 var(--display); letter-spacing: .035em; text-shadow: 1px 2px 0 #51351f, 0 4px 16px rgba(0,0,0,.32); }
+    .hero-copy { max-width: 510px; margin: 25px 0 32px; color: rgba(255,250,243,.84); font-size: 1.04rem; line-height: 1.8; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 13px; }
+    .button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 9px; padding: 0 22px; border: 1px solid transparent; border-radius: 2px; text-decoration: none; font-size: .83rem; font-weight: 700; transition: transform .2s, background .2s; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: #d2a375; color: #261b14; }
+    .button-primary:hover { background: #e4bd91; }
+    .button-outline { border-color: rgba(255,255,255,.55); color: white; }
+    .button-outline:hover { background: rgba(255,255,255,.12); }
+    .hero-note { position: absolute; bottom: 30px; right: max(24px, calc((100% - 1180px) / 2)); color: rgba(255,250,243,.76); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; writing-mode: vertical-rl; }
+
+    .intro-strip { background: var(--wood-dark); color: #fff8ee; }
+    .strip-inner { width: min(1180px, calc(100% - 48px)); min-height: 88px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .strip-inner p { margin: 0; font: 1.15rem var(--serif); }
+    .strip-label { color: #d4ae88; font-size: .7rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+
+    .section { padding: 104px 24px; }
+    .section-inner { width: min(1120px, 100%); margin: auto; }
+    .section-kicker { margin: 0 0 14px; color: var(--wood); font-size: .7rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; }
+    .section-title { margin: 0; font: 600 clamp(2.2rem, 4vw, 3.55rem)/1.13 var(--serif); letter-spacing: -.035em; }
+    .section-lede { max-width: 610px; margin: 19px 0 0; color: var(--muted); font-size: .98rem; line-height: 1.8; }
+    .services { background: var(--cream); }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 48px; background: var(--line); border: 1px solid var(--line); }
+    .service-card { min-height: 230px; padding: 31px 29px; background: var(--cream); }
+    .service-number { color: #b38764; font: 1.08rem var(--serif); }
+    .service-card h3 { margin: 25px 0 10px; font: 600 1.3rem var(--serif); }
+    .service-card p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.75; }
+
+    .about-grid { display: grid; grid-template-columns: 1fr .95fr; align-items: center; gap: 80px; }
+    .about-photo { min-height: 490px; position: relative; background: url('https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1100&q=85') center / cover; }
+    .about-photo::after { content: ''; position: absolute; top: 18px; right: -18px; bottom: -18px; left: 18px; border: 1px solid #b78a61; z-index: -1; }
+    .about-copy p:not(.section-kicker) { color: var(--muted); font-size: .96rem; line-height: 1.9; }
+    .values { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 26px; }
+    .value { padding: 9px 13px; border: 1px solid var(--line); color: var(--wood-dark); font-size: .73rem; font-weight: 700; letter-spacing: .04em; }
+
+    .workshop { padding: 94px 24px; background: #e9dfd0; }
+    .workshop-inner { width: min(1120px, 100%); margin: auto; display: flex; align-items: end; justify-content: space-between; gap: 38px; }
+    .workshop-copy { max-width: 650px; }
+    .workshop-copy p:last-child { color: #655b4f; font-size: .94rem; line-height: 1.8; }
+    .workshop-mark { flex: 0 0 154px; width: 154px; height: 154px; display: grid; place-items: center; border: 1px solid rgba(84,53,34,.45); border-radius: 50%; color: var(--wood-dark); text-align: center; font: .78rem/1.6 var(--serif); letter-spacing: .13em; text-transform: uppercase; transform: rotate(-8deg); }
+
+    .contact { color: #fff8ee; background: #30271f; }
+    .contact .section-kicker { color: #d4ae88; }
+    .contact .section-title { max-width: 680px; }
+    .contact .section-lede { color: rgba(255,248,238,.7); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: end; margin-top: 45px; }
+    .contact-details { display: grid; gap: 16px; }
+    .contact-link { display: flex; align-items: center; gap: 15px; color: #fff8ee; text-decoration: none; }
+    .contact-icon { width: 43px; height: 43px; display: grid; place-items: center; border: 1px solid rgba(255,248,238,.28); border-radius: 50%; color: #d4ae88; font-size: 1.05rem; }
+    .contact-link small { display: block; margin-bottom: 3px; color: rgba(255,248,238,.56); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; }
+    .contact-link strong { font-size: .89rem; font-weight: 600; }
+    .social-row { display: flex; gap: 10px; margin-top: 30px; }
+    .social-link { min-width: 108px; padding: 12px 14px; border: 1px solid rgba(255,248,238,.28); color: #fff8ee; text-align: center; text-decoration: none; font-size: .76rem; font-weight: 600; transition: background .2s; }
+    .social-link:hover { background: rgba(255,255,255,.1); }
+    .contact-action { justify-self: end; }
+    .contact-action .button { min-height: 56px; padding: 0 25px; }
+
+    footer { padding: 25px 24px; background: #241e19; color: rgba(255,248,238,.62); font-size: .73rem; }
+    .footer-inner { width: min(1120px, 100%); margin: auto; display: flex; justify-content: space-between; gap: 20px; }
+    footer a { color: #dfbd98; text-decoration: none; }
+    .whatsapp-float { position: fixed; right: 22px; bottom: 22px; z-index: 5; width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; background: #218c58; color: white; text-decoration: none; font-size: 1.5rem; box-shadow: 0 5px 20px rgba(0,0,0,.22); transition: transform .2s; }
+    .whatsapp-float:hover { transform: translateY(-3px); }
+
+    @media (max-width: 760px) {
+      .nav-wrap { width: min(100% - 32px, 1180px); min-height: 74px; }
+      .brand img { width: 49px; height: 49px; }
+      .menu-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 18px 24px 24px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 13px 0; }
+      .nav-links .nav-cta { margin-top: 6px; padding: 13px 16px; text-align: center; }
+      .hero { min-height: 590px; }
+      .hero-content { width: calc(100% - 40px); padding: 88px 0; }
+      .hero::after { background: linear-gradient(90deg, rgba(28,24,20,.86), rgba(35,28,21,.52)), linear-gradient(0deg, rgba(22,18,14,.42), transparent 70%); }
+      .hero-note { display: none; }
+      .strip-inner { width: calc(100% - 40px); min-height: 80px; align-items: flex-start; justify-content: center; flex-direction: column; gap: 5px; }
+      .section { padding: 76px 20px; }
+      .service-grid { grid-template-columns: 1fr 1fr; }
+      .service-card { min-height: 210px; padding: 25px 21px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-photo { min-height: 360px; margin-right: 12px; }
+      .workshop { padding: 75px 20px; }
+      .workshop-inner { align-items: flex-start; }
+      .workshop-mark { flex-basis: 110px; width: 110px; height: 110px; font-size: .64rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 35px; }
+      .contact-action { justify-self: start; }
+    }
+    @media (max-width: 480px) {
+      .brand-name { font-size: .92rem; }
+      .brand-sub { font-size: .52rem; }
+      .hero { min-height: 570px; }
+      h1 { font-size: 3.25rem; }
+      h1 .wood-word { font-size: 2.45rem; }
+      .hero-copy { font-size: .94rem; }
+      .button { min-height: 47px; padding: 0 15px; font-size: .77rem; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: auto; }
+      .service-card h3 { margin-top: 18px; }
+      .workshop-inner { flex-direction: column; }
+      .workshop-mark { align-self: flex-end; }
+      .social-row { flex-wrap: wrap; }
+      .footer-inner { flex-direction: column; }
+      .whatsapp-float { width: 51px; height: 51px; right: 16px; bottom: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="topline" aria-hidden="true"></div>
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="FANGI CARPENTRY home">
+        <img src="assets/fangi-logo.svg" alt="">
+        <span><span class="brand-name">FANGI</span><span class="brand-sub">Carpentry</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#services">Our services</a>
+        <a href="#about">Our approach</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="https://wa.me/9607732007" target="_blank" rel="noopener noreferrer">Get a quote ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">The finest woodworks</p>
+        <h1>Made with care.<span class="wood-word">FANGI CARPENTRY</span></h1>
+        <p class="hero-copy">Beautifully considered carpentry, made for the way you live. From first sketch to final fit, we bring craftsmanship and care to every detail.</p>
+        <div class="button-row">
+          <a class="button button-primary" href="https://wa.me/9607732007" target="_blank" rel="noopener noreferrer">✆ &nbsp; Discuss your project</a>
+          <a class="button button-outline" href="#services">Explore our work ↓</a>
+        </div>
+      </div>
+      <span class="hero-note">Crafted with purpose · Built to last</span>
+    </section>
+
+    <div class="intro-strip">
+      <div class="strip-inner"><span class="strip-label">A thoughtful touch in every detail</span><p>Good woodwork makes a house feel like home.</p></div>
+    </div>
+
+    <section class="section services" id="services">
+      <div class="section-inner">
+        <p class="section-kicker">What we do</p>
+        <h2 class="section-title">Craft for every corner<br>of your home.</h2>
+        <p class="section-lede">We take pride in practical, lasting work and a careful finish. Every piece is planned around your space, your needs, and the details that matter to you.</p>
+        <div class="service-grid">
+          <article class="service-card"><span class="service-number">01</span><h3>Custom furniture</h3><p>Made-to-measure pieces designed to fit your home and the way you use it.</p></article>
+          <article class="service-card"><span class="service-number">02</span><h3>Kitchens & cabinetry</h3><p>Storage and cabinetry planned with purpose, finished with a clean, considered look.</p></article>
+          <article class="service-card"><span class="service-number">03</span><h3>Doors & joinery</h3><p>Carefully fitted doors, frames, shelving and detailed woodwork for your space.</p></article>
+          <article class="service-card"><span class="service-number">04</span><h3>Interior fit-outs</h3><p>Thoughtful woodwork for residential and commercial interiors, from room details to full fit-outs.</p></article>
+          <article class="service-card"><span class="service-number">05</span><h3>Repairs & restoration</h3><p>Give well-loved furniture and wood features a new lease on life with skilled repair work.</p></article>
+          <article class="service-card"><span class="service-number">06</span><h3>Made to your brief</h3><p>Have an idea in mind? Let's talk through a custom project made just for you.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-inner about-grid">
+        <div class="about-photo" role="img" aria-label="Warm, handcrafted wood interior"></div>
+        <div class="about-copy">
+          <p class="section-kicker">The FANGI difference</p>
+          <h2 class="section-title">Good work is in<br>the details.</h2>
+          <p>At FANGI CARPENTRY, we believe professional work starts with listening. We take time to understand your ideas, plan the right solution, and treat every cut, joint and finish with care.</p>
+          <p>From a single custom piece to a complete interior project, our aim is simple: dependable craftsmanship and woodwork you'll be proud to live with.</p>
+          <div class="values"><span class="value">Made to measure</span><span class="value">Careful finishing</span><span class="value">Built to last</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="workshop">
+      <div class="workshop-inner">
+        <div class="workshop-copy">
+          <p class="section-kicker">Your idea, our craft</p>
+          <h2 class="section-title">Let's make something<br>made for you.</h2>
+          <p>Tell us what you have in mind. We'll help you explore the details, understand the possibilities and take the next step toward a finished piece that feels right at home.</p>
+        </div>
+        <div class="workshop-mark" aria-label="FANGI Carpentry, carefully made">FANGI<br>Carpentry<br>Carefully made</div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="section-inner">
+        <p class="section-kicker">Start a conversation</p>
+        <h2 class="section-title">Have a project in mind?</h2>
+        <p class="section-lede">We'd love to hear what you're planning. Get in touch directly or find FANGI CARPENTRY on social media.</p>
+        <div class="contact-grid">
+          <div>
+            <div class="contact-details">
+              <a class="contact-link" href="https://wa.me/9607732007" target="_blank" rel="noopener noreferrer"><span class="contact-icon" aria-hidden="true">✆</span><span><small>WhatsApp / Call</small><strong>+960 773 2007</strong></span></a>
+              <a class="contact-link" href="https://www.facebook.com/share/1cfLFicfC9/" target="_blank" rel="noopener noreferrer"><span class="contact-icon" aria-hidden="true">f</span><span><small>Follow along</small><strong>FANGI CARPENTRY on Facebook</strong></span></a>
+              <a class="contact-link" href="https://www.instagram.com/fangi_carpentry?xtok=MTM1MzZpNWcwbWtueA==" target="_blank" rel="noopener noreferrer"><span class="contact-icon" aria-hidden="true">◎</span><span><small>See our work</small><strong>@fangi_carpentry on Instagram</strong></span></a>
+            </div>
+            <div class="social-row">
+              <a class="social-link" href="https://www.facebook.com/share/1cfLFicfC9/" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+              <a class="social-link" href="https://www.instagram.com/fangi_carpentry?xtok=MTM1MzZpNWcwbWtueA==" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+            </div>
+          </div>
+          <div class="contact-action"><a class="button button-primary" href="https://wa.me/9607732007" target="_blank" rel="noopener noreferrer">Message us on WhatsApp ↗</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="footer-inner"><span>© <span id="year">2026</span> FANGI CARPENTRY. Crafted with care.</span><a href="#home">Back to top ↑</a></div></footer>
+  <a class="whatsapp-float" href="https://wa.me/9607732007" target="_blank" rel="noopener noreferrer" aria-label="Chat with FANGI CARPENTRY on WhatsApp">✆</a>
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuButton.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      menuButton.textContent = isOpen ? '×' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open navigation menu');
+      menuButton.textContent = '☰';
+    }));
+    document.querySelector('#year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
