@@ -31,7 +31,7 @@
     .site-header { position: relative; z-index: 3; background: rgba(246,241,232,.94); border-bottom: 1px solid var(--line); }
     .nav-wrap { width: min(1180px, calc(100% - 48px)); min-height: 88px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
     .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .brand img { width: 58px; height: 58px; }
+    .brand img { width: 160px; height: 46px; object-fit: contain; }
     .brand-name { font: 1.08rem var(--display); letter-spacing: .08em; color: var(--wood-dark); }
     .brand-sub { margin-top: 3px; color: var(--muted); font-size: .59rem; letter-spacing: .34em; text-transform: uppercase; }
     .nav-links { display: flex; align-items: center; gap: 34px; }
@@ -113,7 +113,7 @@
 
     @media (max-width: 760px) {
       .nav-wrap { width: min(100% - 32px, 1180px); min-height: 74px; }
-      .brand img { width: 49px; height: 49px; }
+      .brand img { width: 140px; height: 41px; }
       .menu-toggle { display: block; }
       .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 18px 24px 24px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; }
       .nav-links.open { display: flex; }
