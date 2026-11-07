@@ -42,8 +42,8 @@
     .menu-toggle { display: none; padding: 10px; border: 0; background: transparent; color: var(--ink); font-size: 1.5rem; cursor: pointer; }
 
     .hero { min-height: 620px; display: grid; align-items: center; position: relative; isolation: isolate; overflow: hidden; color: #fffaf3; background: #31291f; }
-    .hero::before { content: ''; position: absolute; z-index: -2; inset: 0; background: url('https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=2200&q=85') center/cover no-repeat; }
-    .hero::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(28,24,20,.88) 0%, rgba(35,28,21,.73) 45%, rgba(35,28,21,.16) 100%), linear-gradient(0deg, rgba(13,11,9,.32), rgba(13,11,9,.08)); }
+    .hero::before { content: ''; position: absolute; z-index: -2; inset: 0; background: #e9dfd0 url('assets/fangi-logo.svg?v=3') right 9% center / min(48vw, 560px) auto no-repeat; }
+    .hero::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(28,24,20,.94) 0%, rgba(35,28,21,.78) 42%, rgba(35,28,21,.06) 76%, rgba(35,28,21,0) 100%); }
     .hero-content { width: min(1180px, calc(100% - 48px)); margin: 0 auto; padding: 100px 0 112px; }
     .eyebrow { display: flex; align-items: center; gap: 12px; color: #e4c49e; font-size: .71rem; font-weight: 700; letter-spacing: .23em; text-transform: uppercase; }
     .eyebrow::before { content: ''; width: 34px; height: 1px; background: currentColor; }
@@ -136,7 +136,8 @@
       .nav-links .nav-cta { margin-top: 6px; padding: 13px 16px; text-align: center; }
       .hero { min-height: 590px; }
       .hero-content { width: calc(100% - 40px); padding: 88px 0; }
-      .hero::after { background: linear-gradient(90deg, rgba(28,24,20,.86), rgba(35,28,21,.52)), linear-gradient(0deg, rgba(22,18,14,.42), transparent 70%); }
+      .hero::before { background-position: center; background-size: min(78vw, 430px) auto; }
+      .hero::after { background: linear-gradient(90deg, rgba(28,24,20,.90), rgba(35,28,21,.48)); }
       .hero-note { display: none; }
       .strip-inner { width: calc(100% - 40px); min-height: 80px; align-items: flex-start; justify-content: center; flex-direction: column; gap: 5px; }
       .section { padding: 76px 20px; }
