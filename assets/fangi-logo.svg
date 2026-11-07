@@ -1,29 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" role="img" aria-labelledby="title desc">
-  <title id="title">FANGI Carpentry — The Finest Woodworks</title>
-  <desc id="desc">FANGI wordmark on a pale vertical wood-plank background, with the tagline The Finest Woodworks and Carpentry.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" role="img" aria-labelledby="title desc">
+  <title id="title">FANGI Carpentry</title>
+  <desc id="desc">Bold black-and-white FANGI carpentry wordmark, with wood-grain lettering, a screwdriver, and a plank labeled Carpentry.</desc>
   <defs>
-    <linearGradient id="wood" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#d6d4d0"/>
-      <stop offset=".5" stop-color="#f3f1ed"/>
-      <stop offset="1" stop-color="#d2d0cb"/>
-    </linearGradient>
-    <pattern id="planks" width="110" height="220" patternUnits="userSpaceOnUse">
-      <rect width="108" height="220" fill="url(#wood)"/>
-      <path d="M8 0v220M103 0v220" stroke="#aaa8a3" stroke-opacity=".42"/>
-      <path d="M19 0c-4 38 5 66 0 101s4 73 0 119M81 0c5 47-5 75 1 114s-3 72 1 106" fill="none" stroke="#fff" stroke-opacity=".35"/>
-      <path d="M44 0c3 42-3 74 1 112s-2 68 2 108" fill="none" stroke="#aaa8a3" stroke-opacity=".2"/>
+    <pattern id="grain" width="95" height="50" patternUnits="userSpaceOnUse">
+      <path d="M-10 12c24-13 43 9 70-2s34-7 48 0M-8 37c22-10 40 8 68-1s38-8 50-1" fill="none" stroke="#111" stroke-width="4"/>
+      <circle cx="48" cy="26" r="5" fill="#111"/>
     </pattern>
+    <clipPath id="letters"><text x="38" y="235" font-family="Arial Black,Impact,sans-serif" font-size="220" font-weight="900" letter-spacing="-8">FANGI</text></clipPath>
   </defs>
-  <rect width="900" height="220" rx="8" fill="url(#planks)"/>
-  <rect x="12" y="12" width="876" height="196" rx="28" fill="none" stroke="#24243b" stroke-width="3"/>
-  <path d="M29 51v118q0 17 17 17h808q17 0 17-17V51" fill="none" stroke="#24243b" stroke-width="2" opacity=".8"/>
-  <g fill="#24243b">
-    <path d="M119 42 91 103l18-9-15 33h50l-15-33 18 9-28-61Z"/>
-    <path d="M108 126h22v28h-22zM101 154h36v12q-18 10-36 0z"/>
+  <g fill="#fff" stroke="#080808" stroke-width="16" stroke-linejoin="round" paint-order="stroke">
+    <text x="38" y="235" font-family="Arial Black,Impact,sans-serif" font-size="220" font-weight="900" letter-spacing="-8">FANGI</text>
   </g>
-  <text x="165" y="57" fill="#24243b" font-family="Georgia,serif" font-size="31">The Finest Woodworks</text>
-  <path d="M165 67h555" stroke="#24243b" stroke-width="1.5" opacity=".8"/>
-  <text x="155" y="148" fill="#24243b" font-family="Arial,sans-serif" font-size="112" font-weight="400" letter-spacing="1">Fangi</text>
-  <text x="166" y="184" fill="#24243b" font-family="Arial,sans-serif" font-size="23" letter-spacing="15">CARPENTRY</text>
-  <text x="450" y="203" text-anchor="middle" fill="#24243b" font-family="Arial,sans-serif" font-size="12" letter-spacing="9" opacity=".8">FANGI INVESTMENT</text>
+  <rect x="20" y="30" width="900" height="210" fill="url(#grain)" clip-path="url(#letters)" opacity=".8"/>
+  <path d="M72 258h850l35 38-35 42H54l-34-42z" fill="#fff" stroke="#080808" stroke-width="16" stroke-linejoin="round"/>
+  <path d="M95 278h810M75 318h850" stroke="#111" stroke-width="5" opacity=".85"/>
+  <path d="M125 296h68m-36-13v26m670-13h54" stroke="#111" stroke-width="7" stroke-linecap="round"/>
+  <text x="500" y="319" text-anchor="middle" fill="#080808" font-family="Arial,sans-serif" font-size="65" font-weight="900" letter-spacing="18">CARPENTRY</text>
+  <g fill="#fff" stroke="#080808" stroke-width="11" stroke-linejoin="round">
+    <path d="M710 26q0-24 36-24t36 24v72q0 17-17 22v124h-38V120q-17-5-17-22z"/>
+    <path d="M729 30v61m34-61v61M729 116h34M729 241l17 72 17-72" fill="none" stroke-width="9"/>
+    <path d="M736 313l10 32 10-32"/>
+  </g>
 </svg>
