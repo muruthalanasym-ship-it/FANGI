@@ -28,8 +28,8 @@
     body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
     a { color: inherit; }
     .topline { height: 5px; background: linear-gradient(90deg, #33271f, #a8734c, #e0c49f, #8b5a39, #33271f); }
-    .site-header { position: relative; z-index: 3; background: rgba(246,241,232,.94); border-bottom: 1px solid var(--line); }
-    .nav-wrap { width: min(1180px, calc(100% - 48px)); min-height: 148px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .site-header { position: relative; z-index: 3; background: #e9dfd0 url('assets/fangi-logo.svg?v=4') right 8% center / auto 190px no-repeat; border-bottom: 1px solid var(--line); }
+    .nav-wrap { width: min(1180px, calc(100% - 48px)); min-height: 220px; margin: auto; display: flex; align-items: flex-end; justify-content: flex-start; gap: 30px; padding-bottom: 22px; }
     .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
     .brand img { width: min(148px, 16vw); height: auto; display: block; object-fit: contain; }
     .brand-name { font: 1.08rem var(--display); letter-spacing: .08em; color: var(--wood-dark); }
@@ -42,8 +42,8 @@
     .menu-toggle { display: none; padding: 10px; border: 0; background: transparent; color: var(--ink); font-size: 1.5rem; cursor: pointer; }
 
     .hero { min-height: 620px; display: grid; align-items: center; position: relative; isolation: isolate; overflow: hidden; color: #fffaf3; background: #31291f; }
-    .hero::before { content: ''; position: absolute; z-index: -2; inset: 0; background: #e9dfd0 url('assets/fangi-logo.svg?v=3') right 9% center / min(48vw, 560px) auto no-repeat; }
-    .hero::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(28,24,20,.94) 0%, rgba(35,28,21,.78) 42%, rgba(35,28,21,.06) 76%, rgba(35,28,21,0) 100%); }
+    .hero::before { content: ''; position: absolute; z-index: -2; inset: 0; background: linear-gradient(115deg, #30271f, #59412e); }
+    .hero::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(28,24,20,.22), rgba(35,28,21,.08)); }
     .hero-content { width: min(1180px, calc(100% - 48px)); margin: 0 auto; padding: 100px 0 112px; }
     .eyebrow { display: flex; align-items: center; gap: 12px; color: #e4c49e; font-size: .71rem; font-weight: 700; letter-spacing: .23em; text-transform: uppercase; }
     .eyebrow::before { content: ''; width: 34px; height: 1px; background: currentColor; }
@@ -127,8 +127,8 @@
     .whatsapp-float:hover { transform: translateY(-3px); }
 
     @media (max-width: 760px) {
-      .nav-wrap { width: min(100% - 32px, 1180px); min-height: 116px; }
-      .brand img { width: min(112px, 28vw); }
+      .site-header { background-position: center 18px; background-size: auto 125px; }\n      .nav-wrap { width: min(100% - 32px, 1180px); min-height: 170px; justify-content: center; padding-bottom: 12px; }
+
       .menu-toggle { display: block; }
       .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 18px 24px 24px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; }
       .nav-links.open { display: flex; }
@@ -136,8 +136,8 @@
       .nav-links .nav-cta { margin-top: 6px; padding: 13px 16px; text-align: center; }
       .hero { min-height: 590px; }
       .hero-content { width: calc(100% - 40px); padding: 88px 0; }
-      .hero::before { background-position: center; background-size: min(78vw, 430px) auto; }
-      .hero::after { background: linear-gradient(90deg, rgba(28,24,20,.90), rgba(35,28,21,.48)); }
+      .hero::before { background: linear-gradient(115deg, #30271f, #59412e); }
+      .hero::after { background: linear-gradient(90deg, rgba(28,24,20,.22), rgba(35,28,21,.08)); }
       .hero-note { display: none; }
       .strip-inner { width: calc(100% - 40px); min-height: 80px; align-items: flex-start; justify-content: center; flex-direction: column; gap: 5px; }
       .section { padding: 76px 20px; }
@@ -173,9 +173,6 @@
   <div class="topline" aria-hidden="true"></div>
   <header class="site-header">
     <nav class="nav-wrap" aria-label="Main navigation">
-      <a class="brand" href="#home" aria-label="FANGI CARPENTRY — The Finest Woodworks home">
-        <img src="assets/fangi-logo.svg?v=2" alt="FANGI CARPENTRY logo">
-      </a>
       <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
       <div class="nav-links" id="nav-links">
         <a href="#gallery">Gallery</a>
