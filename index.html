@@ -76,6 +76,21 @@
     .service-card h3 { margin: 25px 0 10px; font: 600 1.3rem var(--serif); }
     .service-card p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.75; }
 
+
+    .gallery-section { background: #f1e8dc; }
+    .gallery-heading { display: flex; align-items: end; justify-content: space-between; gap: 28px; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 44px; }
+    .gallery-item { position: relative; display: block; min-height: 290px; overflow: hidden; background: #d7c5ae; color: white; text-decoration: none; isolation: isolate; }
+    .gallery-item::before { content: ''; position: absolute; inset: 0; z-index: -2; background-image: var(--gallery-image); background-position: center; background-size: cover; transition: transform .5s ease; }
+    .gallery-item::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(25,19,14,.83), rgba(25,19,14,.02) 72%); }
+    .gallery-item:hover::before { transform: scale(1.06); }
+    .gallery-caption { position: absolute; right: 22px; bottom: 22px; left: 22px; }
+    .gallery-caption small { display: block; margin-bottom: 7px; color: #e6c39d; font-size: .66rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    .gallery-caption strong { font: 600 1.45rem var(--serif); }
+    .gallery-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; color: #fff8ee; font-size: .75rem; font-weight: 700; }
+    @media (max-width: 760px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } .gallery-item { min-height: 250px; } }
+    @media (max-width: 480px) { .gallery-heading { display: block; } .gallery-grid { grid-template-columns: 1fr; } .gallery-item { min-height: 270px; } }
+
     .about-grid { display: grid; grid-template-columns: 1fr .95fr; align-items: center; gap: 80px; }
     .about-photo { min-height: 490px; position: relative; background: url('https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1100&q=85') center / cover; }
     .about-photo::after { content: ''; position: absolute; top: 18px; right: -18px; bottom: -18px; left: 18px; border: 1px solid #b78a61; z-index: -1; }
@@ -163,6 +178,7 @@
       <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
       <div class="nav-links" id="nav-links">
         <a href="#services">Our services</a>
+        <a href="#gallery">Gallery</a>
         <a href="#about">Our approach</a>
         <a href="#contact">Contact</a>
         <a class="nav-cta" href="https://wa.me/9607732007" target="_blank" rel="noopener noreferrer">Get a quote ↗</a>
@@ -178,7 +194,7 @@
         <p class="hero-copy">Beautifully considered carpentry and wood art, made for the way you live. From custom furniture to handcrafted details, we bring care and craftsmanship to every piece.</p>
         <div class="button-row">
           <a class="button button-primary" href="https://wa.me/9607732007" target="_blank" rel="noopener noreferrer">✆ &nbsp; Discuss your project</a>
-          <a class="button button-outline" href="#services">Explore our work ↓</a>
+          <a class="button button-outline" href="#gallery">Explore the gallery ↓</a>
         </div>
       </div>
       <span class="hero-note">Crafted with purpose · Built to last</span>
@@ -200,6 +216,39 @@
           <article class="service-card"><span class="service-number">04</span><h3>Interior fit-outs</h3><p>Thoughtful woodwork for residential and commercial interiors, from room details to full fit-outs.</p></article>
           <article class="service-card"><span class="service-number">05</span><h3>Repairs &amp; restoration</h3><p>Give well-loved furniture and wood features a new lease on life with skilled repair and restoration.</p></article>
           <article class="service-card"><span class="service-number">06</span><h3>Wood art &amp; special pieces</h3><p>Distinctive handcrafted wood art and custom pieces that bring warmth and character to a room.</p></article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section gallery-section" id="gallery">
+      <div class="section-inner">
+        <div class="gallery-heading">
+          <div>
+            <p class="section-kicker">A look at what we create</p>
+            <h2 class="section-title">The FANGI gallery.</h2>
+            <p class="section-lede">Explore the kinds of woodwork we bring to life, from practical everyday pieces to custom details made for your space.</p>
+          </div>
+        </div>
+        <div class="gallery-grid">
+          <a class="gallery-item" href="#contact" style="--gallery-image:url('https://images.unsplash.com/photo-1538688423619-a81d3f23454b?auto=format&fit=crop&w=1000&q=85')" aria-label="Custom furniture — enquire about a project">
+            <span class="gallery-caption"><small>01 · Made for your home</small><strong>Custom furniture</strong><span class="gallery-link">Enquire about a piece ↗</span></span>
+          </a>
+          <a class="gallery-item" href="#contact" style="--gallery-image:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85')" aria-label="Kitchens and cabinetry — enquire about a project">
+            <span class="gallery-caption"><small>02 · Thoughtful storage</small><strong>Kitchens &amp; cabinetry</strong><span class="gallery-link">Enquire about a project ↗</span></span>
+          </a>
+          <a class="gallery-item" href="#contact" style="--gallery-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85')" aria-label="Doors and joinery — enquire about a project">
+            <span class="gallery-caption"><small>03 · The finishing touch</small><strong>Doors &amp; joinery</strong><span class="gallery-link">Enquire about a project ↗</span></span>
+          </a>
+          <a class="gallery-item" href="#contact" style="--gallery-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85')" aria-label="Interior fit-outs — enquire about a project">
+            <span class="gallery-caption"><small>04 · Spaces with character</small><strong>Interior fit-outs</strong><span class="gallery-link">Enquire about a project ↗</span></span>
+          </a>
+          <a class="gallery-item" href="#contact" style="--gallery-image:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85')" aria-label="Repairs and restoration — enquire about a project">
+            <span class="gallery-caption"><small>05 · Care and renewal</small><strong>Repairs &amp; restoration</strong><span class="gallery-link">Enquire about a project ↗</span></span>
+          </a>
+          <a class="gallery-item" href="#contact" style="--gallery-image:url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85')" aria-label="Wood art and special pieces — enquire about a project">
+            <span class="gallery-caption"><small>06 · One-of-a-kind</small><strong>Wood art &amp; special pieces</strong><span class="gallery-link">Enquire about a piece ↗</span></span>
+          </a>
         </div>
       </div>
     </section>
