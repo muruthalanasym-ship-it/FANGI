@@ -1,24 +1,263 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 339 350" role="img" aria-labelledby="title desc">
-  <title id="title">FANGI Carpentry — The Finest Woodworks</title>
-  <desc id="desc">Fangi Carpentry logo on a pale vertical wood-plank background, with a stylized tree emblem and the words Fangi Investment.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">FANGI Carpentry logo</title>
+  <desc id="desc">A handcrafted woodwork brand mark with a stylized bundle, the word FANGI, and the text The Finest Woodworks, Carpentry, and FANGI Investment.</desc>
   <defs>
-    <linearGradient id="wood" x1="0" x2="1" y1="0" y2="0">
-      <stop offset="0" stop-color="#e6e5e3"/><stop offset=".18" stop-color="#f6f5f3"/><stop offset=".42" stop-color="#e9e8e6"/><stop offset=".64" stop-color="#f8f7f5"/><stop offset=".83" stop-color="#e8e7e5"/><stop offset="1" stop-color="#d9d8d6"/>
+    <filter id="paper-grain" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="6"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.09"/>
+      </feComponentTransfer>
+    </filter>
+    <linearGradient id="wood-fill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f5efe8"/>
+      <stop offset="20%" stop-color="#efe4d3"/>
+      <stop offset="50%" stop-color="#f8f2eb"/>
+      <stop offset="80%" stop-color="#e3d5c2"/>
+      <stop offset="100%" stop-color="#f6efe6"/>
     </linearGradient>
-    <linearGradient id="plank" x1="0" x2="1"><stop stop-color="#000" stop-opacity=".09"/><stop offset=".06" stop-color="#fff" stop-opacity=".22"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset=".93" stop-color="#000" stop-opacity=".04"/><stop offset="1" stop-color="#000" stop-opacity=".11"/></linearGradient>
+    <linearGradient id="wood-stroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3a342f"/>
+      <stop offset="100%" stop-color="#201d1a"/>
+    </linearGradient>
+    <clipPath id="fangi-clip">
+      <text x="600" y="420" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="260" font-weight="700" font-style="italic">fangi</text>
+    </clipPath>
+    <filter id="wood-grain" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.025 0.2" numOctaves="2" seed="12"/>
+      <feDisplacementMap in="SourceGraphic" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
   </defs>
-  <rect width="339" height="350" fill="url(#wood)"/>
-  <g opacity=".55" stroke="#aaa9a7" stroke-width="1"><path d="M14 0v350M39 0v350M72 0v350M105 0v350M143 0v350M174 0v350M209 0v350M246 0v350M277 0v350M315 0v350"/><path d="M16 0v350M74 0v350M145 0v350M211 0v350M279 0v350" stroke="#fff" stroke-width="2" opacity=".8"/></g>
-  <g fill="url(#plank)" opacity=".62"><path d="M0 0h28v350H0zM40 0h34v350H40zM106 0h39v350h-39zM175 0h36v350h-36zM247 0h32v350h-32zM315 0h24v350h-24z"/></g>
-  <g fill="none" stroke="#c2c0bd" opacity=".52" stroke-width="1"><path d="M8 18q7 25 0 50t1 52q6 20 0 42t2 55q4 22-1 48t2 69M32 5q-5 35 1 62t-1 46q-4 18 2 38t-1 52q-4 32 1 63t-2 82M91 0q5 30 0 54t2 49q5 24-1 50t2 54q4 27-1 55t1 88M161 0q-4 31 1 58t-1 46q-4 27 1 51t-1 47q-5 28 1 60t-1 88M229 0q5 28 0 58t2 52q4 20-1 44t2 51q4 30-1 57t2 88M300 0q-5 34 1 61t-2 47q-4 22 1 46t-1 54q-4 28 2 58t-2 84"/><ellipse cx="57" cy="183" rx="8" ry="25"/><ellipse cx="57" cy="183" rx="3" ry="13"/><ellipse cx="263" cy="64" rx="7" ry="19"/><ellipse cx="263" cy="64" rx="2.5" ry="10"/></g>
-  <rect width="339" height="350" fill="#fff" opacity=".08"/>
-  <g fill="#25263e" stroke="#25263e" stroke-linejoin="round" stroke-linecap="round">
-    <text x="125" y="106" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="400" stroke="none">The Finest Woodworks</text><path d="M125 111h181" fill="none" stroke-width="1.2"/>
-    <path d="M68 134l-15-47 20 24-6-47 18 43 2-58 10 54 11-43 1 49 17-34-9 49-7 21z" stroke="none"/>
-    <path d="M70 139q16 5 34 0l-2 10q-15 5-30 0zM69 154q17 4 34 0l-2 10q-16 4-31 0zM68 169q17 4 35 0l-2 10q-16 4-31 0z" stroke="none"/>
-    <path d="M46 114q-16 4-16 22v82q0 17 17 17h260q16 0 16-17v-83q0-16-16-20M46 119q-10 4-10 18v81q0 12 13 12h258q12 0 12-13v-79q0-13-12-17" fill="none" stroke-width="1.4"/>
-    <text x="117" y="184" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="300" letter-spacing="1" stroke="none">fangi</text>
-    <text x="65" y="207" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="7.2" stroke="none">CARPENTRY</text>
-    <text x="34" y="255" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="7.8" stroke="none">FANGI INVESTMENT</text>
+
+  <rect width="1200" height="820" fill="#efe9df"/>
+  <rect width="1200" height="820" filter="url(#paper-grain)" opacity="0.9"/>
+
+  <g transform="translate(70,20)">
+    <g transform="translate(80,0)">
+      <g stroke="#2d2f34" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <path d="M157 180 C121 128, 111 92, 122 48 C144 70, 157 95, 161 136 C166 110, 180 68, 198 38 C219 65, 229 107, 219 152"/>
+        <path d="M254 214 C215 169, 206 131, 214 88 C240 105, 260 126, 270 163 C280 137, 299 101, 323 73 C343 106, 347 144, 338 190"/>
+        <path d="M349 244 C310 217, 296 180, 299 136 C329 144, 347 160, 362 190 C377 170, 394 151, 419 129 C440 166, 443 203, 429 246"/>
+        <path d="M452 272 C423 245, 409 216, 410 176 C438 182, 456 196, 473 220 C492 197, 510 180, 537 165 C556 203, 558 239, 539 283"/>
+        <path d="M550 282 C523 263, 510 235, 511 196 C542 200, 564 214, 584 240 C602 217, 623 196, 653 179 C676 220, 678 258, 655 299"/>
+        <path d="M655 288 C630 278, 614 253, 616 214 C645 216, 665 228, 684 250 C706 230, 731 214, 762 201 C780 237, 779 268, 759 306"/>
+        <path d="M760 280 C739 275, 725 254, 726 218 C752 224, 772 234, 795 256 C816 237, 838 224, 863 214 C875 252, 872 285, 850 315"/>
+        <path d="M854 272 C838 271, 821 258, 812 230 C841 236, 860 247, 877 268 C896 258, 919 247, 941 239 C951 273, 946 296, 926 320"/>
+      </g>
+
+      <g fill="none" stroke="#2d2f34" stroke-width="7" stroke-linecap="round">
+        <path d="M114 146 L170 146"/>
+        <path d="M205 161 L268 161"/>
+        <path d="M288 190 L352 190"/>
+        <path d="M392 222 L450 222"/>
+        <path d="M488 233 L560 233"/>
+        <path d="M597 230 L678 230"/>
+        <path d="M715 224 L776 224"/>
+        <path d="M792 212 L876 212"/>
+      </g>
+
+      <g fill="none" stroke="#2d2f34" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M118 307 C149 334, 162 356, 156 386 C167 381, 182 373, 196 367 C188 399, 182 430, 179 472 L90 472 C76 440, 78 382, 98 342 C101 333, 108 319, 118 307Z"/>
+        <path d="M170 305 C184 335, 190 357, 192 380 C201 377, 214 364, 225 355 C216 394, 212 436, 209 472 L178 472 C168 439, 162 402, 163 334"/>
+        <path d="M219 304 C235 333, 248 356, 258 382 C270 377, 285 367, 300 356 C290 395, 284 435, 281 472 L239 472 C227 445, 218 394, 219 304Z"/>
+        <path d="M285 302 C301 332, 317 353, 335 378 C350 368, 364 359, 381 344 C374 387, 375 429, 379 472 L316 472 C309 443, 299 380, 285 302Z"/>
+        <path d="M365 304 C381 334, 398 356, 418 379 C432 366, 446 358, 462 346 C455 393, 457 431, 463 472 L400 472 C392 441, 383 390, 365 304Z"/>
+        <path d="M452 306 C470 333, 483 354, 499 378 C514 365, 529 355, 546 342 C541 387, 547 430, 556 472 L495 472 C483 440, 469 390, 452 306Z"/>
+        <path d="M535 312 C552 336, 569 356, 589 377 C602 367, 617 353, 634 340 C629 391, 638 436, 650 472 L586 472 C570 444, 554 392, 535 312Z"/>
+        <path d="M625 310 C645 333, 661 353, 681 375 C696 367, 712 356, 727 342 C721 387, 728 429, 736 472 L675 472 C660 452, 649 396, 625 310Z"/>
+        <path d="M719 304 C731 325, 748 343, 770 367 C785 356, 801 347, 822 337 C822 382, 834 427, 852 472 L783 472 C769 449, 751 411, 719 304Z"/>
+      </g>
+
+      <g stroke="#2d2f34" stroke-width="3" fill="none" opacity="0.75">
+        <path d="M149 360 C160 390, 157 417, 148 454"/>
+        <path d="M216 356 C227 384, 226 416, 217 454"/>
+        <path d="M289 344 C298 380, 295 415, 287 454"/>
+        <path d="M376 343 C383 380, 382 417, 378 454"/>
+        <path d="M470 343 C479 381, 482 420, 480 454"/>
+        <path d="M570 341 C577 377, 585 416, 590 454"/>
+        <path d="M675 332 C682 374, 689 418, 693 454"/>
+        <path d="M790 327 C796 370, 802 414, 810 454"/>
+      </g>
+    </g>
+
+    <g>
+      <text x="600" y="170" text-anchor="middle" fill="#2d2f34" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="700" letter-spacing="4">THE FINEST WOODWORKS</text>
+
+      <rect x="200" y="215" width="800" height="380" rx="36" fill="none" stroke="#2d2f34" stroke-width="8"/>
+      <path d="M240 260 H960" stroke="#2d2f34" stroke-width="6"/>
+      <path d="M240 568 H960" stroke="#2d2f34" stroke-width="6"/>
+
+      <g clip-path="url(#fangi-clip)">
+        <rect x="220" y="210" width="760" height="350" fill="url(#wood-fill)"/>
+        <g stroke="#2d2f34" stroke-width="3" opacity="0.35">
+          <path d="M260 220 L260 540"/>
+          <path d="M340 220 L340 540"/>
+          <path d="M420 220 L420 540"/>
+          <path d="M500 220 L500 540"/>
+          <path d="M580 220 L580 540"/>
+          <path d="M660 220 L660 540"/>
+          <path d="M740 220 L740 540"/>
+          <path d="M820 220 L820 540"/>
+          <path d="M900 220 L900 540"/>
+          <path d="M250 255 C315 300, 342 240, 392 276 S500 325, 560 286 S670 270, 905 320" fill="none"/>
+          <path d="M250 318 C325 352, 360 296, 415 330 S510 370, 574 333 S677 312, 905 383" fill="none"/>
+          <path d="M250 385 C325 420, 370 370, 430 405 S512 445, 574 410 S678 392, 905 448" fill="none"/>
+          <path d="M250 458 C325 490, 368 450, 430 486 S522 526, 583 488 S675 468, 905 515" fill="none"/>
+        </g>
+      </g>
+
+      <text x="600" y="430" text-anchor="middle" fill="#2d2f34" font-family="Georgia, 'Times New Roman', serif" font-size="260" font-weight="700" font-style="italic" filter="url(#wood-grain)">fangi</text>
+
+      <text x="600" y="610" text-anchor="middle" fill="#2d2f34" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="500" letter-spacing="16">CARPENTRY</text>
+    </g>
+
+    <text x="600" y="720" text-anchor="middle" fill="#2d2f34" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="700" letter-spacing="4">FANGI INVESTMENT</text>
   </g>
 </svg>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
