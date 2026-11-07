@@ -1,21 +1,63 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
   <title id="title">FANGI Carpentry</title>
-  <desc id="desc">Bold black-and-white carpentry logo with a wood-grain sign and screwdriver.</desc>
-  <g stroke="#080808" stroke-linejoin="round" stroke-linecap="round">
-    <!-- Main lettering, outlined like carved boards. -->
-    <text x="34" y="218" fill="#fff" stroke-width="18" paint-order="stroke" font-family="Impact, 'Arial Black', sans-serif" font-size="208" font-weight="900" letter-spacing="-8">FANGI</text>
-    <path d="M72 99h282l-24 43H82zM62 157h251l-20 38H71z" fill="#fff" stroke-width="13"/>
-    <path d="M94 111h230M83 171h210M90 123l65-5m93 2 58-8M81 181l55-4m90 1 43-7" fill="none" stroke-width="5"/>
-    <!-- Carpenter's screwdriver crossing the lettering. -->
-    <path d="M872 25c0-15 17-22 40-22s40 7 40 22v97c0 12-10 19-21 22v114l-19 57-19-57V144c-11-3-21-10-21-22z" fill="#fff" stroke-width="13"/>
-    <path d="M891 34v76m21-79v89m21-86v76M912 146v98m-11 38 11-27 11 27" fill="none" stroke-width="7"/>
-    <path d="M897 17q15-9 30 0" fill="none" stroke-width="6"/>
-    <!-- Long signboard carrying the business name. -->
-    <path d="M37 250l25-13h1080l25 13-25 91H62z" fill="#fff" stroke-width="14"/>
-    <path d="M76 264h1028M70 326h1040M93 280l80-5m-88 38 115-8m833-27-77 7m95 25-122-8" fill="none" stroke-width="5"/>
-    <text x="600" y="319" text-anchor="middle" fill="#080808" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="65" font-weight="900" letter-spacing="16">CARPENTRY</text>
-    <!-- Small wood-knot details. -->
-    <ellipse cx="246" cy="122" rx="13" ry="8" fill="none" stroke-width="5"/>
-    <ellipse cx="1104" cy="277" rx="11" ry="7" fill="none" stroke-width="4"/>
+  <desc id="desc">Black-and-white hand-drawn carpentry logo: FANGI built from wood-plank letters, a screwdriver, and a CARPENTRY signboard.</desc>
+  <defs>
+    <style>
+      .wood{fill:#fff;stroke:#080808;stroke-width:11;stroke-linejoin:round;stroke-linecap:round}
+      .grain{fill:none;stroke:#080808;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .fine{fill:none;stroke:#080808;stroke-width:2.6;stroke-linecap:round}
+      .knot{fill:#fff;stroke:#080808;stroke-width:4}
+    </style>
+  </defs>
+  <!-- F: stacked timber boards and a short upright -->
+  <g>
+    <path class="wood" d="M45 91 276 77l-26 47H54z"/>
+    <path class="wood" d="m37 151 226 2-23 45H47z"/>
+    <path class="wood" d="m91 191 82 1-7 54-69 7z"/>
+    <path class="grain" d="m61 103 178-12m-167 25 127-9m-166 49 151 4m-142 22 107-5m-51 26-2 26m20-26-1 26m19-27v27"/>
+    <ellipse class="knot" cx="170" cy="109" rx="10" ry="6"/>
+    <ellipse class="knot" cx="165" cy="174" rx="10" ry="7"/>
   </g>
+  <!-- A: crossed planks with timber grain -->
+  <g>
+    <path class="wood" d="m249 240 86-135 53 5 88 131-56 12-60-92-54 91z"/>
+    <path class="grain" d="m268 229 74-110m-57 118 68-103m28-1 73 107m-50-111 67 106m-119-20 79-2"/>
+    <ellipse class="knot" cx="314" cy="190" rx="8" ry="6" transform="rotate(-55 314 190)"/>
+    <ellipse class="knot" cx="428" cy="191" rx="8" ry="6" transform="rotate(55 428 191)"/>
+  </g>
+  <!-- N: upright boards joined by a diagonal plank -->
+  <g>
+    <path class="wood" d="m466 108 45 4 2 131-48 1z"/>
+    <path class="wood" d="m637 98 50 9-27 135-49-9z"/>
+    <path class="wood" d="m484 126 36-25 133 102-34 40z"/>
+    <path class="grain" d="m481 123 1 101m17-94 1 92m154-105-24 105m-117-83 99 79m-84-92 82 63"/>
+    <ellipse class="knot" cx="498" cy="143" rx="9" ry="7"/>
+    <ellipse class="knot" cx="616" cy="190" rx="9" ry="7"/>
+  </g>
+  <!-- G: broad circular wood-built letter, open at right -->
+  <path class="wood" fill-rule="evenodd" d="M837 101a76 76 0 1 0 6 120l-27-36a34 34 0 1 1-2-67z"/>
+  <path class="grain" d="M790 111a57 57 0 0 0-51 39m-6 28a57 57 0 0 0 57 47m42-97-23 22m-1 26 25 17"/>
+  <ellipse class="knot" cx="809" cy="117" rx="8" ry="6" transform="rotate(40 809 117)"/>
+  <path class="wood" d="m803 169 79-2 2 43-82 1z"/>
+  <path class="grain" d="m817 181 51-2m-48 18 42-1"/>
+  <ellipse class="knot" cx="844" cy="190" rx="8" ry="6"/>
+  <!-- I: top and bottom crossboards around a timber post -->
+  <g>
+    <path class="wood" d="m974 106 174-15 3 48-176 17z"/>
+    <path class="wood" d="m1010 143 50-2 3 75-52 2z"/>
+    <path class="wood" d="m975 202 175-13 6 47-178 15z"/>
+    <path class="grain" d="m993 118 130-11m-120 26 116-9m-83 29 1 43m19-44 1 42m-55 23 122-9m-108 24 113-8"/>
+    <ellipse class="knot" cx="1074" cy="120" rx="9" ry="7"/>
+    <ellipse class="knot" cx="1078" cy="222" rx="9" ry="7"/>
+  </g>
+  <!-- Screwdriver running through the G/I, drawn above the letters -->
+  <g>
+    <path class="wood" stroke-width="10" d="M882 43c0-17 18-27 39-27s39 10 39 27v77c0 12-10 20-20 23v105l-19 48-19-48V143c-10-3-20-11-20-23z"/>
+    <path class="grain" d="M899 49v64m22-71v78m22-71v64m-22 35v91m-13-40h26m-26 18h26"/>
+    <path class="fine" d="M894 39q27-16 54 0m-39 254 12-30 12 30-12 30z"/>
+  </g>
+  <!-- Long hand-drawn timber plaque -->
+  <path class="wood" stroke-width="12" d="m44 273 27-16h1057l27 17-28 68H70z"/>
+  <path class="grain" d="m84 278 1018-4M77 329l1031 3M103 291l85-6m-94 27 113-9m833-17-82 8m93 21-105-6"/>
+  <text x="600" y="323" text-anchor="middle" fill="#080808" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="900" letter-spacing="13">CARPENTRY</text>
 </svg>
