@@ -1,24 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
   <title id="title">FANGI Carpentry</title>
-  <desc id="desc">Bold black-and-white FANGI carpentry wordmark, with wood-grain lettering, a screwdriver, and a plank labeled Carpentry.</desc>
-  <defs>
-    <pattern id="grain" width="95" height="50" patternUnits="userSpaceOnUse">
-      <path d="M-10 12c24-13 43 9 70-2s34-7 48 0M-8 37c22-10 40 8 68-1s38-8 50-1" fill="none" stroke="#111" stroke-width="4"/>
-      <circle cx="48" cy="26" r="5" fill="#111"/>
-    </pattern>
-    <clipPath id="letters"><text x="38" y="235" font-family="Arial Black,Impact,sans-serif" font-size="220" font-weight="900" letter-spacing="-8">FANGI</text></clipPath>
-  </defs>
-  <g fill="#fff" stroke="#080808" stroke-width="16" stroke-linejoin="round" paint-order="stroke">
-    <text x="38" y="235" font-family="Arial Black,Impact,sans-serif" font-size="220" font-weight="900" letter-spacing="-8">FANGI</text>
-  </g>
-  <rect x="20" y="30" width="900" height="210" fill="url(#grain)" clip-path="url(#letters)" opacity=".8"/>
-  <path d="M72 258h850l35 38-35 42H54l-34-42z" fill="#fff" stroke="#080808" stroke-width="16" stroke-linejoin="round"/>
-  <path d="M95 278h810M75 318h850" stroke="#111" stroke-width="5" opacity=".85"/>
-  <path d="M125 296h68m-36-13v26m670-13h54" stroke="#111" stroke-width="7" stroke-linecap="round"/>
-  <text x="500" y="319" text-anchor="middle" fill="#080808" font-family="Arial,sans-serif" font-size="65" font-weight="900" letter-spacing="18">CARPENTRY</text>
-  <g fill="#fff" stroke="#080808" stroke-width="11" stroke-linejoin="round">
-    <path d="M710 26q0-24 36-24t36 24v72q0 17-17 22v124h-38V120q-17-5-17-22z"/>
-    <path d="M729 30v61m34-61v61M729 116h34M729 241l17 72 17-72" fill="none" stroke-width="9"/>
-    <path d="M736 313l10 32 10-32"/>
+  <desc id="desc">Bold black-and-white carpentry logo with a wood-grain sign and screwdriver.</desc>
+  <g stroke="#080808" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Main lettering, outlined like carved boards. -->
+    <text x="34" y="218" fill="#fff" stroke-width="18" paint-order="stroke" font-family="Impact, 'Arial Black', sans-serif" font-size="208" font-weight="900" letter-spacing="-8">FANGI</text>
+    <path d="M72 99h282l-24 43H82zM62 157h251l-20 38H71z" fill="#fff" stroke-width="13"/>
+    <path d="M94 111h230M83 171h210M90 123l65-5m93 2 58-8M81 181l55-4m90 1 43-7" fill="none" stroke-width="5"/>
+    <!-- Carpenter's screwdriver crossing the lettering. -->
+    <path d="M872 25c0-15 17-22 40-22s40 7 40 22v97c0 12-10 19-21 22v114l-19 57-19-57V144c-11-3-21-10-21-22z" fill="#fff" stroke-width="13"/>
+    <path d="M891 34v76m21-79v89m21-86v76M912 146v98m-11 38 11-27 11 27" fill="none" stroke-width="7"/>
+    <path d="M897 17q15-9 30 0" fill="none" stroke-width="6"/>
+    <!-- Long signboard carrying the business name. -->
+    <path d="M37 250l25-13h1080l25 13-25 91H62z" fill="#fff" stroke-width="14"/>
+    <path d="M76 264h1028M70 326h1040M93 280l80-5m-88 38 115-8m833-27-77 7m95 25-122-8" fill="none" stroke-width="5"/>
+    <text x="600" y="319" text-anchor="middle" fill="#080808" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="65" font-weight="900" letter-spacing="16">CARPENTRY</text>
+    <!-- Small wood-knot details. -->
+    <ellipse cx="246" cy="122" rx="13" ry="8" fill="none" stroke-width="5"/>
+    <ellipse cx="1104" cy="277" rx="11" ry="7" fill="none" stroke-width="4"/>
   </g>
 </svg>
