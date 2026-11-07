@@ -1,80 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1350 420" role="img" aria-labelledby="title desc">
-  <title id="title">FANGI Carpentry</title>
-  <desc id="desc">Black and white wood-inspired sign logo reading FANGI and CARPENTRY with a screwdriver.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 339 350" role="img" aria-labelledby="title desc">
+  <title id="title">FANGI Carpentry — The Finest Woodworks</title>
+  <desc id="desc">Fangi Carpentry logo on a pale vertical wood-plank background, with a stylized tree emblem and the words Fangi Investment.</desc>
   <defs>
-    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="140%">
-      <feDropShadow dx="0" dy="4" stdDeviation="2" flood-color="#000" flood-opacity="0.15"/>
-    </filter>
-    <style>
-      .wood { fill: #f4f4f2; stroke: #0a0a0a; stroke-width: 12; stroke-linejoin: round; stroke-linecap: round; }
-      .woodDark { fill: #f2f0ed; stroke: #0a0a0a; stroke-width: 10; stroke-linejoin: round; }
-      .grain { fill: none; stroke: #0a0a0a; stroke-width: 4; stroke-linecap: round; opacity: 0.8; }
-      .grain2 { fill: none; stroke: #0a0a0a; stroke-width: 2.5; stroke-linecap: round; opacity: 0.75; }
-      .knot { fill: #f7f7f5; stroke: #0a0a0a; stroke-width: 3.5; }
-      .screw { fill: #f4f4f2; stroke: #0a0a0a; stroke-width: 10; stroke-linejoin: round; }
-      .screw-line { fill: none; stroke: #0a0a0a; stroke-width: 4; stroke-linecap: round; }
-      .text-logo { font-family: Impact, Haettenschweiler, 'Arial Black', sans-serif; font-size: 230px; font-weight: 900; letter-spacing: -10px; }
-      .text-carp { font-family: Impact, Haettenschweiler, 'Arial Black', sans-serif; font-size: 88px; font-weight: 900; letter-spacing: 8px; }
-    </style>
+    <linearGradient id="wood" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#e6e5e3"/><stop offset=".18" stop-color="#f6f5f3"/><stop offset=".42" stop-color="#e9e8e6"/><stop offset=".64" stop-color="#f8f7f5"/><stop offset=".83" stop-color="#e8e7e5"/><stop offset="1" stop-color="#d9d8d6"/>
+    </linearGradient>
+    <linearGradient id="plank" x1="0" x2="1"><stop stop-color="#000" stop-opacity=".09"/><stop offset=".06" stop-color="#fff" stop-opacity=".22"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset=".93" stop-color="#000" stop-opacity=".04"/><stop offset="1" stop-color="#000" stop-opacity=".11"/></linearGradient>
   </defs>
-
-  <g filter="url(#softShadow)">
-    <!-- Top wood bars to frame the FANGI letters -->
-    <g>
-      <path class="wood" d="M74 88L474 60L452 118L79 138Z"/>
-      <path class="wood" d="M415 83L700 48L680 99L411 120Z"/>
-      <path class="wood" d="M632 72L1048 52L1039 112L624 126Z"/>
-      <path class="wood" d="M981 72L1275 90L1265 132L978 122Z"/>
-      <path class="grain2" d="M93 89L453 66M121 112L419 93M621 95L1018 79M994 99L1255 113"/>
-      <ellipse class="knot" cx="177" cy="93" rx="10" ry="7"/>
-      <ellipse class="knot" cx="355" cy="76" rx="10" ry="7"/>
-      <ellipse class="knot" cx="770" cy="68" rx="9" ry="7"/>
-      <ellipse class="knot" cx="1105" cy="78" rx="9" ry="7"/>
-    </g>
-
-    <!-- Main title: FANGI -->
-    <g>
-      <g transform="translate(0,20)">
-        <text x="78" y="255" class="text-logo" fill="#f5f5f3" stroke="#0a0a0a" stroke-width="20" paint-order="stroke">F</text>
-        <text x="258" y="255" class="text-logo" fill="#f5f5f3" stroke="#0a0a0a" stroke-width="20" paint-order="stroke">A</text>
-        <text x="468" y="255" class="text-logo" fill="#f5f5f3" stroke="#0a0a0a" stroke-width="20" paint-order="stroke">N</text>
-        <text x="706" y="255" class="text-logo" fill="#f5f5f3" stroke="#0a0a0a" stroke-width="20" paint-order="stroke">G</text>
-        <text x="962" y="255" class="text-logo" fill="#f5f5f3" stroke="#0a0a0a" stroke-width="20" paint-order="stroke">I</text>
-      </g>
-
-      <!-- Wood plank details to make letters feel carved -->
-      <g opacity="0.96">
-        <path class="woodDark" d="M94 165L213 146L204 206L93 208Z"/>
-        <path class="woodDark" d="M142 161L270 138L270 189L149 196Z"/>
-        <path class="woodDark" d="M276 168L398 146L394 211L281 216Z"/>
-        <path class="woodDark" d="M513 166L621 146L621 207L516 214Z"/>
-        <path class="woodDark" d="M557 166L693 150L692 209L562 214Z"/>
-        <path class="woodDark" d="M765 170L865 150L862 218L764 222Z"/>
-        <path class="woodDark" d="M800 167L903 151L906 219L810 223Z"/>
-        <path class="woodDark" d="M1016 170L1099 154L1097 220L1018 222Z"/>
-        <path class="woodDark" d="M896 175L1008 171L1010 220L900 223Z"/>
-      </g>
-
-      <g class="grain">
-        <path d="M109 170L200 155M130 178L206 166M165 181L204 177M312 167L392 154M340 182L388 174M426 174L615 155M560 184L684 170M776 180L853 166M816 193L889 181M1018 181L1090 170M1028 198L1088 187"/>
-      </g>
-    </g>
-
-    <!-- Screwdriver centered through the letters -->
-    <g>
-      <path class="screw" d="M703 30C703 12 720 0 742 0C762 0 780 12 780 30V98C780 111 770 121 757 124V215L741 264L725 215V124C712 121 703 111 703 98V30Z"/>
-      <path class="screw-line" d="M718 32V94M742 21V110M766 32V92M742 123V223M726 176H758"/>
-      <path class="grain2" d="M721 29C733 19 750 19 760 31"/>
-      <path class="grain2" d="M728 2H754"/>
-    </g>
-
-    <!-- Banner: CARPENTRY -->
-    <g>
-      <path class="wood" d="M70 253L170 233L1178 233L1288 253L1281 325L77 325Z"/>
-      <path class="grain" d="M92 263H1267M100 306H1255M130 250L182 239M235 250L288 239M332 250L394 239M444 250L512 239M560 250L618 239M664 250L724 239M770 250L834 239M882 250L944 239M992 250L1053 239M1095 250L1158 239"/>
-      <text x="675" y="306" text-anchor="middle" class="text-carp" fill="#0a0a0a" stroke="#0a0a0a" stroke-width="1.5">CARPENTRY</text>
-      <path class="woodDark" d="M36 260L80 241L95 277L47 287Z"/>
-      <path class="woodDark" d="M1270 260L1313 241L1295 286L1245 289Z"/>
-    </g>
+  <rect width="339" height="350" fill="url(#wood)"/>
+  <g opacity=".55" stroke="#aaa9a7" stroke-width="1"><path d="M14 0v350M39 0v350M72 0v350M105 0v350M143 0v350M174 0v350M209 0v350M246 0v350M277 0v350M315 0v350"/><path d="M16 0v350M74 0v350M145 0v350M211 0v350M279 0v350" stroke="#fff" stroke-width="2" opacity=".8"/></g>
+  <g fill="url(#plank)" opacity=".62"><path d="M0 0h28v350H0zM40 0h34v350H40zM106 0h39v350h-39zM175 0h36v350h-36zM247 0h32v350h-32zM315 0h24v350h-24z"/></g>
+  <g fill="none" stroke="#c2c0bd" opacity=".52" stroke-width="1"><path d="M8 18q7 25 0 50t1 52q6 20 0 42t2 55q4 22-1 48t2 69M32 5q-5 35 1 62t-1 46q-4 18 2 38t-1 52q-4 32 1 63t-2 82M91 0q5 30 0 54t2 49q5 24-1 50t2 54q4 27-1 55t1 88M161 0q-4 31 1 58t-1 46q-4 27 1 51t-1 47q-5 28 1 60t-1 88M229 0q5 28 0 58t2 52q4 20-1 44t2 51q4 30-1 57t2 88M300 0q-5 34 1 61t-2 47q-4 22 1 46t-1 54q-4 28 2 58t-2 84"/><ellipse cx="57" cy="183" rx="8" ry="25"/><ellipse cx="57" cy="183" rx="3" ry="13"/><ellipse cx="263" cy="64" rx="7" ry="19"/><ellipse cx="263" cy="64" rx="2.5" ry="10"/></g>
+  <rect width="339" height="350" fill="#fff" opacity=".08"/>
+  <g fill="#25263e" stroke="#25263e" stroke-linejoin="round" stroke-linecap="round">
+    <text x="125" y="106" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="400" stroke="none">The Finest Woodworks</text><path d="M125 111h181" fill="none" stroke-width="1.2"/>
+    <path d="M68 134l-15-47 20 24-6-47 18 43 2-58 10 54 11-43 1 49 17-34-9 49-7 21z" stroke="none"/>
+    <path d="M70 139q16 5 34 0l-2 10q-15 5-30 0zM69 154q17 4 34 0l-2 10q-16 4-31 0zM68 169q17 4 35 0l-2 10q-16 4-31 0z" stroke="none"/>
+    <path d="M46 114q-16 4-16 22v82q0 17 17 17h260q16 0 16-17v-83q0-16-16-20M46 119q-10 4-10 18v81q0 12 13 12h258q12 0 12-13v-79q0-13-12-17" fill="none" stroke-width="1.4"/>
+    <text x="117" y="184" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="300" letter-spacing="1" stroke="none">fangi</text>
+    <text x="65" y="207" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="7.2" stroke="none">CARPENTRY</text>
+    <text x="34" y="255" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="7.8" stroke="none">FANGI INVESTMENT</text>
   </g>
 </svg>
