@@ -1,17 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-labelledby="title desc">
-  <title id="title">FANGI Carpentry logo</title>
-  <desc id="desc">A dark navy stylized wood shaving above the FANGI Carpentry wordmark.</desc>
-  <defs>
-    <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#b37a4d"/>
-      <stop offset=".48" stop-color="#8d5734"/>
-      <stop offset="1" stop-color="#d1a477"/>
-    </linearGradient>
-  </defs>
-  <rect x="5" y="5" width="210" height="210" rx="25" fill="#f6f1e8" stroke="#543522" stroke-width="3"/>
-  <path d="M109 25 96 66 87 39 88 72 69 50 82 82 63 72 83 92 135 92 154 72 136 82 149 50 130 72 131 39 122 66Z" fill="#26243a"/>
-  <path d="M83 96h52l-6 13H89zM88 113h42l-5 12H93zM94 130h30l-4 12H98z" fill="#26243a"/>
-  <path d="M76 148c18 8 50 8 68 0" fill="none" stroke="#26243a" stroke-width="5" stroke-linecap="round"/>
-  <text x="110" y="177" text-anchor="middle" fill="url(#wood)" font-family="Georgia,serif" font-weight="bold" font-size="26" letter-spacing="3">FANGI</text>
-  <text x="110" y="197" text-anchor="middle" fill="#543522" font-family="Arial,sans-serif" font-size="8" letter-spacing="4">CARPENTRY</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" role="img" aria-labelledby="title desc">
+<title id="title">FANGI wooden wordmark</title><desc id="desc">FANGI lettering in a warm carved wood style with natural grain.</desc>
+<defs>
+<linearGradient id="timber" x1="0" y1="0" x2="0.12" y2="1"><stop offset="0" stop-color="#d9ad7b"/><stop offset=".28" stop-color="#b77b4c"/><stop offset=".62" stop-color="#89532f"/><stop offset="1" stop-color="#59351f"/></linearGradient>
+<pattern id="grain" width="48" height="22" patternUnits="userSpaceOnUse"><path d="M-4 6 C8 0 18 12 31 5 S48 4 55 8 M-6 17 C7 11 18 22 32 15 S48 14 56 18" fill="none" stroke="#f0c99a" stroke-opacity=".34" stroke-width="1.2"/></pattern>
+<clipPath id="letters"><text x="7" y="78" font-family="Georgia,serif" font-weight="900" font-size="75" letter-spacing="2">FANGI</text></clipPath>
+</defs>
+<text x="7" y="78" font-family="Georgia,serif" font-weight="900" font-size="75" letter-spacing="2" fill="url(#timber)" stroke="#59351f" stroke-width="1.7" paint-order="stroke">FANGI</text>
+<rect width="420" height="88" fill="url(#grain)" clip-path="url(#letters)"/>
+<path d="M10 92 H390" stroke="#9a6037" stroke-width="1.5"/>
+<text x="210" y="111" text-anchor="middle" fill="#543522" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="6">CARPENTRY &amp; WOODCRAFT</text>
 </svg>
