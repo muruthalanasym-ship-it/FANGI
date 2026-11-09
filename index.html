@@ -30,7 +30,10 @@
     .topline { height: 5px; background: linear-gradient(90deg, #33271f, #a8734c, #e0c49f, #8b5a39, #33271f); }
     .site-header { position: relative; z-index: 3; background: #e9dfd0; border-bottom: 1px solid var(--line); }
     .nav-wrap { width: min(1180px, calc(100% - 48px)); min-height: 112px; margin: auto; display: flex; align-items: center; justify-content: flex-start; gap: 34px; }
-    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand { display: flex; flex: 0 0 auto; align-items: center; justify-content: flex-start; gap: 12px; margin-right: 0; text-decoration: none; }
+    .site-header .nav-wrap > .brand { order: 0; }
+    .site-header .nav-wrap > .nav-links { order: 1; }
+    .site-header .nav-wrap > .menu-toggle { order: 2; }
     .brand img { width: clamp(112px, 13vw, 154px); height: 96px; display: block; object-fit: contain; }
     .brand-name { font: 1.08rem var(--display); letter-spacing: .08em; color: var(--wood-dark); }
     .brand-sub { margin-top: 3px; color: var(--muted); font-size: .59rem; letter-spacing: .34em; text-transform: uppercase; }
@@ -42,7 +45,7 @@
     .menu-toggle { display: none; padding: 10px; border: 0; background: transparent; color: var(--ink); font-size: 1.5rem; cursor: pointer; }
 
     .hero { min-height: 650px; display: grid; align-items: end; position: relative; isolation: isolate; overflow: hidden; color: #fffaf3; background: radial-gradient(ellipse at 50% 18%, #9a704d 0%, #68462f 42%, #38271c 100%); }
-    .hero::before { content: ''; position: absolute; z-index: -2; inset: 18px 0 0; background: url('assets/fangi-logo.svg?v=7') center 42% / auto min(430px, 58vw) no-repeat; mix-blend-mode: multiply; opacity: .96; }
+    .hero::before { content: ''; position: absolute; z-index: -2; inset: 18px 0 0; background: url('assets/fangi-logo.svg?v=8') center 42% / auto min(430px, 58vw) no-repeat; mix-blend-mode: multiply; opacity: .96; }
     .hero::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(180deg, rgba(43,29,19,.02) 0%, rgba(43,29,19,.04) 48%, rgba(37,25,17,.92) 100%); }
     .hero-content { width: min(1180px, calc(100% - 48px)); margin: auto auto 0; padding: 385px 0 52px; text-align: center; }
     .eyebrow { display: flex; align-items: center; justify-content: center; gap: 12px; color: #e4c49e; font-size: .71rem; font-weight: 700; letter-spacing: .23em; text-transform: uppercase; }
@@ -176,7 +179,7 @@
   <div class="topline" aria-hidden="true"></div>
   <header class="site-header">
     <nav class="nav-wrap" aria-label="Main navigation">
-      <a class="brand" href="#home" aria-label="FANGI Carpentry home"><img src="assets/fangi-logo.svg?v=8" alt="FANGI Carpentry — The Finest Woodworks"></a>
+      <a class="brand" href="#home" aria-label="FANGI Carpentry home"><img src="assets/fangi-logo.svg?v=9" alt="FANGI Carpentry — The Finest Woodworks"></a>
       <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
       <div class="nav-links" id="nav-links">
         <a href="#gallery">Gallery</a>
