@@ -29,27 +29,27 @@
     a { color: inherit; }
     .topline { height: 5px; background: linear-gradient(90deg, #33271f, #a8734c, #e0c49f, #8b5a39, #33271f); }
     .site-header { position: relative; z-index: 3; background: #e9dfd0; border-bottom: 1px solid var(--line); }
-    .nav-wrap { width: min(1180px, calc(100% - 48px)); min-height: 76px; margin: auto; display: flex; align-items: center; justify-content: flex-end; gap: 30px; }
+    .nav-wrap { width: min(1180px, calc(100% - 48px)); min-height: 76px; margin: auto; display: flex; align-items: center; justify-content: flex-start; gap: 30px; }
     .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
     .brand img { width: min(148px, 16vw); height: auto; display: block; object-fit: contain; }
     .brand-name { font: 1.08rem var(--display); letter-spacing: .08em; color: var(--wood-dark); }
     .brand-sub { margin-top: 3px; color: var(--muted); font-size: .59rem; letter-spacing: .34em; text-transform: uppercase; }
-    .nav-links { display: flex; align-items: center; gap: 34px; }
+    .nav-links { display: flex; align-items: center; justify-content: flex-start; gap: 30px; }
     .nav-links a { text-decoration: none; font-size: .84rem; font-weight: 600; transition: color .2s; }
     .nav-links a:hover { color: var(--wood); }
     .nav-links .nav-cta { padding: 12px 19px; color: #fffaf3; background: var(--wood-dark); border-radius: 2px; }
     .nav-links .nav-cta:hover { color: white; background: var(--wood); }
     .menu-toggle { display: none; padding: 10px; border: 0; background: transparent; color: var(--ink); font-size: 1.5rem; cursor: pointer; }
 
-    .hero { min-height: 680px; display: grid; align-items: center; position: relative; isolation: isolate; overflow: hidden; color: #fffaf3; background: #3b2b20; }
-    .hero::before { content: ''; position: absolute; z-index: -2; inset: 0; background: #e9dfd0 url('assets/fangi-logo.svg?v=6') center 42% / auto 72% no-repeat; }
-    .hero::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(180deg, rgba(39,29,21,.05) 0%, rgba(39,29,21,.10) 58%, rgba(39,29,21,.88) 100%); }
-    .hero-content { width: min(1180px, calc(100% - 48px)); margin: auto auto 0; padding: 430px 0 58px; text-align: center; }
+    .hero { min-height: 650px; display: grid; align-items: end; position: relative; isolation: isolate; overflow: hidden; color: #fffaf3; background: radial-gradient(ellipse at 50% 18%, #9a704d 0%, #68462f 42%, #38271c 100%); }
+    .hero::before { content: ''; position: absolute; z-index: -2; inset: 18px 0 0; background: url('assets/fangi-logo.svg?v=7') center 42% / auto min(430px, 58vw) no-repeat; mix-blend-mode: multiply; opacity: .96; }
+    .hero::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(180deg, rgba(43,29,19,.02) 0%, rgba(43,29,19,.04) 48%, rgba(37,25,17,.92) 100%); }
+    .hero-content { width: min(1180px, calc(100% - 48px)); margin: auto auto 0; padding: 385px 0 52px; text-align: center; }
     .eyebrow { display: flex; align-items: center; justify-content: center; gap: 12px; color: #e4c49e; font-size: .71rem; font-weight: 700; letter-spacing: .23em; text-transform: uppercase; }
     .eyebrow::before { content: ''; width: 34px; height: 1px; background: currentColor; }
     h1 { max-width: 900px; margin: 22px auto 17px; font: 600 clamp(3.2rem, 7.3vw, 6.4rem)/.98 var(--serif); letter-spacing: -.045em; }
     h1 .wood-word { display: block; margin-top: 12px; color: #d3a678; font: clamp(2.4rem, 5.2vw, 4.65rem)/1.08 var(--display); letter-spacing: .035em; text-shadow: 1px 2px 0 #51351f, 0 4px 16px rgba(0,0,0,.18); }
-    .hero-copy { max-width: 650px; margin: 25px auto 32px; color: rgba(255,250,243,.84); font-size: 1.04rem; line-height: 1.8; }
+    .hero-copy { max-width: 650px; margin: 19px auto 26px; color: rgba(255,250,243,.84); font-size: 1.04rem; line-height: 1.8; }
     .button-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 13px; }
     .button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 9px; padding: 0 22px; border: 1px solid transparent; border-radius: 2px; text-decoration: none; font-size: .8rem; font-weight: 700; letter-spacing: .02em; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
     .button:hover { transform: translateY(-2px); }
@@ -127,16 +127,16 @@
     .whatsapp-float:hover { transform: translateY(-3px); }
 
     @media (max-width: 760px) {
-      .nav-wrap { width: min(100% - 32px, 1180px); min-height: 70px; justify-content: center; }
+      .nav-wrap { width: min(100% - 32px, 1180px); min-height: 70px; justify-content: flex-start; }
 
       .menu-toggle { display: block; }
       .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 18px 24px 24px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; }
       .nav-links.open { display: flex; }
       .nav-links a { padding: 13px 0; }
       .nav-links .nav-cta { margin-top: 6px; padding: 13px 16px; text-align: center; }
-      .hero { min-height: 650px; }
-      .hero-content { width: calc(100% - 40px); padding: 360px 0 54px; }
-      .hero::before { background-position: center 22px; background-size: auto 330px; }
+      .hero { min-height: 620px; }
+      .hero-content { width: calc(100% - 40px); padding: 340px 0 48px; }
+      .hero::before { inset: 12px 0 0; background-position: center 18px; background-size: auto 300px; }
       .hero::after { background: linear-gradient(180deg, rgba(39,29,21,.02) 0%, rgba(39,29,21,.06) 48%, rgba(39,29,21,.9) 100%); }
       .hero-note { display: none; }
       .strip-inner { width: calc(100% - 40px); min-height: 80px; align-items: flex-start; justify-content: center; flex-direction: column; gap: 5px; }
@@ -152,8 +152,8 @@
       .contact-action { justify-self: start; }
     }
     @media (max-width: 480px) {
-      .hero { min-height: 620px; }
-      .hero-content { padding-top: 340px; }
+      .hero { min-height: 590px; }
+      .hero-content { padding-top: 320px; }
       h1 { font-size: 3.25rem; }
       h1 .wood-word { font-size: 2.45rem; }
       .hero-copy { font-size: .94rem; }
