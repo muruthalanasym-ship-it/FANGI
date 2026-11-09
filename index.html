@@ -190,6 +190,43 @@ h1 .wood-word{display:block;margin-top:3px;color:#f3eee6;font:700 clamp(2.9rem,5
  h1,h1 .wood-word{font-size:2.55rem}
 }
 
+
+/* Final reference-match refinements */
+.site-header{background:#292929!important;border-bottom:5px solid #b98255!important}
+.nav-wrap{min-height:132px!important;width:min(1200px,calc(100% - 64px))!important}
+.header-logo img{width:320px!important;height:116px!important;object-fit:contain!important;object-position:left center!important}
+.nav-links{gap:42px!important}
+.nav-links a{font-size:1.45rem!important;font-weight:500!important;letter-spacing:0!important;color:#f4f1ed!important}
+.nav-links .nav-cta{padding:0!important;background:transparent!important;border:0!important;color:#f4f1ed!important}
+.hero{min-height:590px!important;padding:0!important;background:#292929!important;color:#f1ece4!important}
+.hero-inner{min-height:590px!important;grid-template-columns:54% 46%!important;gap:0!important}
+.hero-content{width:100%!important;max-width:700px!important;margin:0!important;padding:72px 38px 65px max(6.1vw,32px)!important;text-align:left!important}
+.hero .eyebrow{display:none!important}
+.hero h1{max-width:650px!important;margin:18px 0 22px!important;color:#f1ece4!important;font:700 clamp(3rem,5vw,4.55rem)/1.08 var(--sans)!important;letter-spacing:-.035em!important}
+.hero h1 .wood-word,.hero h1 .headline-repeat{display:block!important;margin:0!important;color:#f1ece4!important;font:700 clamp(3rem,5vw,4.55rem)/1.08 var(--sans)!important;letter-spacing:-.035em!important;text-shadow:none!important}
+.hero-copy{max-width:620px!important;margin:24px 0 28px!important;color:#f0ece6!important;font-size:clamp(1.05rem,1.55vw,1.35rem)!important;line-height:1.55!important}
+.hero-visual{height:590px!important;min-height:590px!important;padding:0!important;overflow:hidden!important}
+.hero-visual img{width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:cover!important;object-position:center!important;filter:none!important}
+.hero::after{background:linear-gradient(90deg,#292929 0%,rgba(41,41,41,.98) 44%,rgba(41,41,41,.18) 63%,rgba(41,41,41,0) 100%)!important}
+@media(max-width:760px){
+ .nav-wrap{min-height:88px!important;width:calc(100% - 32px)!important}
+ .header-logo img{width:220px!important;height:78px!important}
+ .nav-links{gap:7px!important}
+ .nav-links a{font-size:1rem!important}
+ .hero-inner{min-height:unset!important;grid-template-columns:1fr!important}
+ .hero-visual{grid-row:1!important;height:300px!important;min-height:300px!important}
+ .hero-content{grid-row:2!important;width:100%!important;margin:0!important;padding:35px 24px 42px!important}
+ .hero h1,.hero h1 .wood-word,.hero h1 .headline-repeat{font-size:clamp(2.5rem,9vw,3.8rem)!important}
+ .hero-copy{font-size:1rem!important}
+ .hero::after{background:linear-gradient(180deg,rgba(41,41,41,0) 0%,#292929 295px)!important}
+}
+@media(max-width:480px){
+ .header-logo img{width:190px!important;height:70px!important}
+ .hero-visual{height:245px!important;min-height:245px!important}
+ .hero-content{padding:30px 20px 38px!important}
+ .hero h1,.hero h1 .wood-word,.hero h1 .headline-repeat{font-size:2.55rem!important}
+}
+
 </style>
 </head>
 <body>
@@ -211,7 +248,7 @@ h1 .wood-word{display:block;margin-top:3px;color:#f3eee6;font:700 clamp(2.9rem,5
       <div class="hero-inner">
         <div class="hero-content">
           <p class="eyebrow">The finest woodworks</p>
-          <h1>Fangi Carpentry –<span class="wood-word">Master Craftsmen</span></h1>
+          <h1>Fangi Carpentry –<span class="wood-word">Master Craftsmen</span><span class="headline-repeat">Master Craftsmen</span></h1>
           <p class="hero-copy">Specializing in custom furniture, residential repairs, and professional carpentry services in the Maldives. Our approach blends traditional skill with modern design.</p>
           <div class="button-row">
             <a class="button button-primary" href="https://wa.me/9607732007" target="_blank" rel="noopener noreferrer">Get a Quote ↗</a>
