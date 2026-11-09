@@ -137,19 +137,71 @@ h1 .wood-word{font-size:2rem}
 .hero-copy{font-size:.91rem}
 }
 
+
+/* Reference layout: charcoal navigation and split workshop hero */
+:root{--charcoal:#292929;--hero-dark:#292929;--warm-wood:#b98255;--cream-text:#f3eee6}
+.site-header{background:#292929;border-bottom:5px solid #a97850;backdrop-filter:none}
+.nav-wrap{width:min(1200px,calc(100% - 64px));min-height:130px;justify-content:space-between;gap:32px}
+.header-logo{display:flex;align-items:center;flex:0 0 auto;margin-right:auto}
+.header-logo img{display:block;width:min(320px,29vw);height:112px;object-fit:contain;object-position:left center}
+.nav-links{gap:38px;margin-left:auto}
+.nav-links a{color:#f5f1eb;font-size:1.15rem;font-weight:500;letter-spacing:0;text-transform:none}
+.nav-links a:hover{color:#d7a77d}
+.nav-links .nav-cta{padding:0;color:#f5f1eb;background:transparent;border:0;border-radius:0}
+.nav-links .nav-cta:hover{color:#d7a77d;background:transparent}
+.menu-toggle{color:#f5f1eb;border-color:rgba(255,255,255,.35)}
+.hero{min-height:550px;padding:0;background:#292929;color:#f3eee6;border-top:0}
+.hero::before{display:none}
+.hero::after{background:linear-gradient(90deg,#292929 0%,rgba(41,41,41,.98) 45%,rgba(41,41,41,.08) 68%,rgba(41,41,41,.02) 100%)}
+.hero-inner{width:100%;max-width:none;min-height:550px;grid-template-columns:minmax(0,54%) minmax(0,46%);gap:0}
+.hero-content{width:min(700px,100%);margin:0 0 0 max(6.1vw,32px);padding:62px 34px 62px 0;text-align:left}
+.eyebrow{justify-content:flex-start;color:#d6a77d}
+h1{max-width:650px;margin:18px 0 22px;color:#f3eee6;font:700 clamp(2.9rem,5vw,4.55rem)/1.08 var(--sans);letter-spacing:-.035em}
+h1 .wood-word{display:block;margin-top:3px;color:#f3eee6;font:700 clamp(2.9rem,5vw,4.55rem)/1.08 var(--sans);letter-spacing:-.035em;text-shadow:none}
+.hero-copy{max-width:620px;margin:22px 0 28px;color:#eee9e1;font-size:clamp(1rem,1.55vw,1.35rem);line-height:1.55}
+.button-row{justify-content:flex-start}
+.button-primary{background:#b98255;color:#211a15}
+.button-primary:hover{background:#d09a6d}
+.button-outline{border-color:rgba(243,238,230,.65);color:#f3eee6}
+.button-outline:hover{background:rgba(255,255,255,.1)}
+.hero-visual{height:550px;min-height:550px;padding:0;overflow:hidden;align-self:stretch}
+.hero-visual img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;object-position:center;filter:none}
+.hero-note{display:none}
+@media(max-width:760px){
+ .nav-wrap{width:calc(100% - 32px);min-height:88px;justify-content:space-between}
+ .header-logo img{width:220px;height:78px}
+ .nav-links{background:#292929;border-bottom:1px solid rgba(255,255,255,.18)}
+ .nav-links a{color:#f5f1eb}
+ .hero{padding:0;min-height:unset}
+ .hero-inner{grid-template-columns:1fr;min-height:unset}
+ .hero-visual{grid-row:1;height:300px;min-height:300px}
+ .hero-content{grid-row:2;width:100%;margin:0;padding:38px 24px 46px;text-align:left}
+ .hero::after{background:linear-gradient(180deg,rgba(41,41,41,0) 0%,#292929 295px)}
+ .eyebrow{justify-content:flex-start}
+ h1{font-size:clamp(2.5rem,9vw,3.8rem)}
+ h1 .wood-word{font-size:clamp(2.5rem,9vw,3.8rem)}
+ .hero-copy{font-size:1rem}
+ .button-row{justify-content:flex-start}
+}
+@media(max-width:480px){
+ .header-logo img{width:190px;height:70px}
+ .hero-visual{height:245px;min-height:245px}
+ .hero-content{padding:32px 20px 40px}
+ h1,h1 .wood-word{font-size:2.55rem}
+}
+
 </style>
 </head>
 <body>
   <div class="topline" aria-hidden="true"></div>
   <header class="site-header">
     <nav class="nav-wrap" aria-label="Main navigation">
-      
+      <a class="header-logo" href="#home" aria-label="FANGI Carpentry home"><img src="assets/fangi-logo.svg?v=13" alt="FANGI Carpentry"></a>
       <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
       <div class="nav-links" id="nav-links">
-        <a href="#gallery">Gallery</a>
-        <a href="#about">Our approach</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-cta" href="https://wa.me/9607732007" target="_blank" rel="noopener noreferrer">Get a quote ↗</a>
+        <a href="#gallery">Menu</a>
+        <a class="nav-cta" href="https://wa.me/9607732007" target="_blank" rel="noopener noreferrer">Get Quote</a>
+        <a href="#contact">Contact Us</a>
       </div>
     </nav>
   </header>
@@ -159,15 +211,15 @@ h1 .wood-word{font-size:2rem}
       <div class="hero-inner">
         <div class="hero-content">
           <p class="eyebrow">The finest woodworks</p>
-          <h1>Made with care.<span class="wood-word">FANGI CARPENTRY</span></h1>
-          <p class="hero-copy">Beautifully considered carpentry and wood art, made for the way you live. From custom furniture to handcrafted details, we bring care and craftsmanship to every piece.</p>
+          <h1>Fangi Carpentry –<span class="wood-word">Master Craftsmen</span></h1>
+          <p class="hero-copy">Specializing in custom furniture, residential repairs, and professional carpentry services in the Maldives. Our approach blends traditional skill with modern design.</p>
           <div class="button-row">
-            <a class="button button-primary" href="https://wa.me/9607732007" target="_blank" rel="noopener noreferrer">✆ &nbsp; Discuss your project</a>
-            <a class="button button-outline" href="#gallery">Explore the gallery ↓</a>
+            <a class="button button-primary" href="https://wa.me/9607732007" target="_blank" rel="noopener noreferrer">Get a Quote ↗</a>
+            <a class="button button-outline" href="#gallery">Explore Our Work ↓</a>
           </div>
         </div>
         <div class="hero-visual">
-          <img src="assets/fangi-logo.svg?v=12" alt="Original FANGI Carpentry logo — The Finest Woodworks">
+          <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1500&q=90" alt="Carpenter working with wood in a traditional workshop">
         </div>
       </div>
       <span class="hero-note">Crafted with purpose · Built to last</span>
