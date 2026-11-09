@@ -29,12 +29,12 @@
     a { color: inherit; }
     .topline { height: 5px; background: linear-gradient(90deg, #33271f, #a8734c, #e0c49f, #8b5a39, #33271f); }
     .site-header { position: relative; z-index: 3; background: #e9dfd0; border-bottom: 1px solid var(--line); }
-    .nav-wrap { width: min(1180px, calc(100% - 48px)); min-height: 76px; margin: auto; display: flex; align-items: center; justify-content: flex-start; gap: 30px; }
+    .nav-wrap { width: min(1180px, calc(100% - 48px)); min-height: 112px; margin: auto; display: flex; align-items: center; justify-content: flex-start; gap: 34px; }
     .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .brand img { width: min(148px, 16vw); height: auto; display: block; object-fit: contain; }
+    .brand img { width: clamp(112px, 13vw, 154px); height: 96px; display: block; object-fit: contain; }
     .brand-name { font: 1.08rem var(--display); letter-spacing: .08em; color: var(--wood-dark); }
     .brand-sub { margin-top: 3px; color: var(--muted); font-size: .59rem; letter-spacing: .34em; text-transform: uppercase; }
-    .nav-links { display: flex; align-items: center; justify-content: flex-start; gap: 30px; }
+    .nav-links { display: flex; align-items: center; justify-content: flex-start; gap: 30px; margin-left: auto; }
     .nav-links a { text-decoration: none; font-size: .84rem; font-weight: 600; transition: color .2s; }
     .nav-links a:hover { color: var(--wood); }
     .nav-links .nav-cta { padding: 12px 19px; color: #fffaf3; background: var(--wood-dark); border-radius: 2px; }
@@ -127,7 +127,9 @@
     .whatsapp-float:hover { transform: translateY(-3px); }
 
     @media (max-width: 760px) {
-      .nav-wrap { width: min(100% - 32px, 1180px); min-height: 70px; justify-content: flex-start; }
+      .nav-wrap { width: min(100% - 32px, 1180px); min-height: 86px; justify-content: space-between; gap: 12px; }
+      .brand img { width: 104px; height: 78px; }
+      .menu-toggle { margin-left: auto; }
 
       .menu-toggle { display: block; }
       .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 18px 24px 24px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; }
@@ -174,6 +176,7 @@
   <div class="topline" aria-hidden="true"></div>
   <header class="site-header">
     <nav class="nav-wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="FANGI Carpentry home"><img src="assets/fangi-logo.svg?v=8" alt="FANGI Carpentry — The Finest Woodworks"></a>
       <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
       <div class="nav-links" id="nav-links">
         <a href="#gallery">Gallery</a>
