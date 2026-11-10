@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#292929"><title>FANGI Gallery Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#30271f;--paper:#f4eee4;--cream:#fffaf2;--wood:#b98255;--dark:#292929;--muted:#75685b}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',Arial,sans-serif}
+header{background:var(--dark);border-bottom:5px solid var(--wood);padding:22px 24px;color:var(--cream)}
+.head{width:min(1050px,100%);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font:700 1.6rem 'Playfair Display',Georgia,serif;letter-spacing:.06em}.brand span{display:block;font:500 .65rem 'DM Sans';letter-spacing:.22em;color:#d5b18e;margin-top:4px}
+a{color:inherit}.back{color:#f4eee4;text-decoration:none;font-size:.85rem}
+main{width:min(850px,calc(100% - 36px));margin:56px auto 80px}
+h1{font:600 clamp(2rem,5vw,3rem) 'Playfair Display',Georgia,serif;margin:0 0 10px}
+.lede{color:var(--muted);line-height:1.7;margin:0 0 30px}
+.panel{background:var(--cream);border:1px solid rgba(91,64,42,.18);padding:28px;margin:20px 0;box-shadow:0 10px 30px rgba(60,42,25,.05)}
+label{display:block;font-size:.8rem;font-weight:700;margin:0 0 8px}
+input[type=email],input[type=password]{width:100%;padding:14px;border:1px solid #cdbba7;background:white;font:inherit;margin-bottom:16px}
+button,.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;border:0;background:#765033;color:#fffaf2;font:700 .82rem 'DM Sans';cursor:pointer;text-decoration:none}
+button:hover,.button:hover{background:#946b49}.secondary{background:transparent;color:#65432c;border:1px solid #a98a6d}
+.danger{background:#8a3930}.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#status{padding:12px 14px;background:#f0e5d7;color:#60452f;font-size:.84rem;line-height:1.6;margin:16px 0}
+#status.error{background:#f8e6e2;color:#8a3026}#status.success{background:#e7f0e5;color:#315c35}
+#admin-area[hidden],#login-panel[hidden]{display:none}
+.upload-box{border:1px dashed #b99a7a;padding:22px;text-align:center;background:#fbf6ee}
+input[type=file]{display:block;width:100%;margin:12px 0 18px}
+.photo-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;margin-top:18px}
+.photo{border:1px solid #ddcfbd;background:#fff;padding:8px}.photo img{width:100%;height:145px;object-fit:cover;display:block;background:#eee}
+.photo p{font-size:.75rem;overflow-wrap:anywhere;margin:9px 0}
+.small{font-size:.75rem;color:var(--muted);line-height:1.6}
+footer{text-align:center;padding:24px;color:#887967;font-size:.72rem}
+@media(max-width:560px){main{margin-top:34px}.panel{padding:20px}.head{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="head"><div class="brand">FANGI <span>CARPENTRY · GALLERY ADMIN</span></div><a class="back" href="./#gallery">← Back to website</a></div></header>
+<main>
+<h1>Manage service photos</h1>
+<p class="lede">Sign in to add photos of completed FANGI carpentry projects. Uploaded images will appear in the public website gallery.</p>
+<div id="status" role="status">Connect the gallery storage in <strong>assets/supabase-config.js</strong> and complete the setup steps in SUPABASE_SETUP.md to enable uploads.</div>
+<section class="panel" id="login-panel">
+<h2>Admin sign in</h2>
+<form id="login-form">
+<label for="email">Admin email</label><input id="email" type="email" autocomplete="username" required>
+<label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required>
+<button type="submit">Sign in</button>
+</form>
+</section>
+<section class="panel" id="admin-area" hidden>
+<div class="row"><h2>Upload new photos</h2><button id="signout" class="secondary" type="button">Sign out</button></div>
+<div class="upload-box">
+<label for="photos">Choose service photos (JPG, PNG, WebP; up to 8 MB each)</label>
+<input id="photos" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+<button id="upload" type="button">Upload selected photos</button>
+<p class="small">Use clear photos of finished furniture, cabinetry, doors, repairs and other completed work.</p>
+</div>
+<h2 style="margin-top:30px">Published photos</h2>
+<div id="photo-list" class="photo-list"></div>
+</section>
+</main>
+<footer>FANGI CARPENTRY · Private administration</footer>
+<script src="assets/supabase-config.js"></script>
+<script type="module">
+const config=window.FANGI_SUPABASE_CONFIG||{};
+const status=document.querySelector('#status');
+const loginPanel=document.querySelector('#login-panel');
+const adminArea=document.querySelector('#admin-area');
+const say=(message,type='')=>{status.textContent=message;status.className=type};
+if(!config.url||!config.anonKey||config.url.includes('YOUR_PROJECT')||config.anonKey.includes('YOUR_SUPABASE')){
+ say('Setup required: add your Supabase Project URL and anon/public key to assets/supabase-config.js, then follow SUPABASE_SETUP.md. Uploads are not active yet.','error');
+}else{
+ try{
+  const {createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
+  const supabase=createClient(config.url,config.anonKey);
+  const bucket=supabase.storage.from('fangi-gallery');
+  async function refresh(){
+   const {data,error}=await bucket.list('',{limit:100,sortBy:{column:'created_at',order:'desc'}});
+   if(error)throw error;
+   const list=document.querySelector('#photo-list');list.replaceChildren();
+   (data||[]).filter(x=>x.name&&!x.name.startsWith('.')).forEach(file=>{
+    const url=bucket.getPublicUrl(file.name).data.publicUrl;
+    const card=document.createElement('article');card.className='photo';
+    const img=document.createElement('img');img.src=url;img.alt='Published FANGI project photo';
+    const name=document.createElement('p');name.textContent=file.name;
+    const del=document.createElement('button');del.className='danger';del.type='button';del.textContent='Delete photo';
+    del.addEventListener('click',async()=>{if(!confirm('Delete this photo from the public gallery?'))return;const {error}=await bucket.remove([file.name]);if(error){say(error.message,'error');return;}say('Photo deleted.','success');await refresh();});
+    card.append(img,name,del);list.append(card);
+   });
+   if(!list.children.length){const p=document.createElement('p');p.className='small';p.textContent='No uploaded photos yet.';list.append(p);}
+  }
+  async function showSession(){
+   const {data:{session}}=await supabase.auth.getSession();
+   loginPanel.hidden=!!session;adminArea.hidden=!session;
+   if(session){say('Signed in. Uploads are published to the FANGI gallery.','success');await refresh();}
+  }
+  document.querySelector('#login-form').addEventListener('submit',async e=>{
+   e.preventDefault();say('Signing in…');
+   const {error}=await supabase.auth.signInWithPassword({email:document.querySelector('#email').value,password:document.querySelector('#password').value});
+   if(error){say(error.message,'error');return;}await showSession();
+  });
+  document.querySelector('#signout').addEventListener('click',async()=>{await supabase.auth.signOut();await showSession();say('You have signed out.');});
+  document.querySelector('#upload').addEventListener('click',async()=>{
+   const files=[...document.querySelector('#photos').files];
+   if(!files.length){say('Choose at least one image first.','error');return;}
+   for(const file of files){
+    if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>8*1024*1024){say(file.name+' is not supported or is larger than 8 MB.','error');return;}
+   }
+   const button=document.querySelector('#upload');button.disabled=true;button.textContent='Uploading…';
+   try{
+    for(const file of files){
+     const safe=file.name.normalize('NFKD').replace(/[^a-zA-Z0-9._-]+/g,'-').replace(/^-+|-+$/g,'');
+     const path=Date.now()+'-'+crypto.randomUUID()+'-'+safe;
+     const {error}=await bucket.upload(path,file,{cacheControl:'3600',upsert:false,contentType:file.type});
+     if(error)throw error;
+    }
+    document.querySelector('#photos').value='';say(files.length+' photo(s) uploaded successfully and published.','success');await refresh();
+   }catch(error){say('Upload failed: '+error.message,'error');}
+   finally{button.disabled=false;button.textContent='Upload selected photos';}
+  });
+  await showSession();
+ }catch(error){say('Could not connect to gallery storage: '+error.message,'error');}
+}
+</script>
+</body></html>
