@@ -227,6 +227,16 @@ h1 .wood-word{display:block;margin-top:3px;color:#f3eee6;font:700 clamp(2.9rem,5
  .hero h1,.hero h1 .wood-word{font-size:2.55rem!important}
 }
 
+
+/* Green-line height adjustment: compact hero panel and match image height */
+@media(min-width:761px){
+ .hero{min-height:480px!important}
+ .hero-inner{min-height:480px!important;grid-template-columns:54% 46%!important;align-items:stretch!important}
+ .hero-content{min-height:480px!important;padding:40px 38px 40px max(6.1vw,32px)!important;display:flex!important;flex-direction:column!important;justify-content:center!important}
+ .hero-visual{height:480px!important;min-height:480px!important;align-self:stretch!important}
+ .hero-visual img{height:100%!important;width:100%!important;object-fit:cover!important;object-position:center!important}
+}
+
 </style>
 </head>
 <body>
