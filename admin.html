@@ -110,7 +110,7 @@ if(!config.url||!config.anonKey||config.url.includes('YOUR_PROJECT')||config.ano
      card.append(img,name,del);list.append(card);
     });
    }
-   const {data:rootFiles,error:rootError}=await bucket.list('',{limit:100,sortBy:{column:'created_at',order:'desc'});
+   const {data:rootFiles,error:rootError}=await bucket.list('',{limit:100,sortBy:{column:'created_at',order:'desc'}});
    if(rootError)throw rootError;
    (rootFiles||[]).filter(x=>x.id&&x.name&&!x.name.startsWith('.')).forEach(file=>{
     total++;
