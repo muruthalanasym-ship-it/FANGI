@@ -447,6 +447,38 @@ h1 .wood-word{display:block;margin-top:3px;color:#f3eee6;font:700 clamp(2.9rem,5
           section.append(heading, grid);
           albums.append(section);
         }
+        // Keep any earlier root-level uploads visible as an uncategorized album.
+        const {data:legacyFiles,error:legacyError}=await bucket.list('',{
+          limit:100,sortBy:{column:'created_at',order:'desc'}
+        });
+        if (legacyError) throw legacyError;
+        const legacy=(legacyFiles||[]).filter(file=>file.id&&file.name&&!file.name.startsWith('.'));
+        if (legacy.length) {
+          const section=document.createElement('section');
+          section.className='album-section';
+          const heading=document.createElement('h3');
+          heading.textContent='Other Works';
+          const grid=document.createElement('div');
+          grid.className='album-photo-grid';
+          legacy.forEach(file=>{
+            const publicUrl=bucket.getPublicUrl(file.name).data.publicUrl;
+            const card=document.createElement('a');
+            card.className='album-photo';
+            card.href=publicUrl;
+            card.target='_blank';
+            card.rel='noopener noreferrer';
+            const img=document.createElement('img');
+            img.src=publicUrl;
+            img.alt='FANGI carpentry project';
+            img.loading='lazy';
+            const caption=document.createElement('span');
+            caption.textContent=file.name.replace(/\.[^.]+$/,'').replace(/[-_]+/g,' ');
+            card.append(img,caption);
+            grid.append(card);
+          });
+          section.append(heading,grid);
+          albums.append(section);
+        }
       } catch (err) {
         console.warn('FANGI gallery albums could not be loaded:', err.message);
       }
