@@ -17,7 +17,7 @@ h1{font:600 clamp(2rem,5vw,3rem) 'Playfair Display',Georgia,serif;margin:0 0 10p
 .lede{color:var(--muted);line-height:1.7;margin:0 0 30px}
 .panel{background:var(--cream);border:1px solid rgba(91,64,42,.18);padding:28px;margin:20px 0;box-shadow:0 10px 30px rgba(60,42,25,.05)}
 label{display:block;font-size:.8rem;font-weight:700;margin:0 0 8px}
-input[type=email],input[type=password]{width:100%;padding:14px;border:1px solid #cdbba7;background:white;font:inherit;margin-bottom:16px}
+input[type=email],input[type=password],select{width:100%;padding:14px;border:1px solid #cdbba7;background:white;font:inherit;margin-bottom:16px}
 button,.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;border:0;background:#765033;color:#fffaf2;font:700 .82rem 'DM Sans';cursor:pointer;text-decoration:none}
 button:hover,.button:hover{background:#946b49}.secondary{background:transparent;color:#65432c;border:1px solid #a98a6d}
 .danger{background:#8a3930}.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
@@ -51,7 +51,16 @@ footer{text-align:center;padding:24px;color:#887967;font-size:.72rem}
 <section class="panel" id="admin-area" hidden>
 <div class="row"><h2>Upload new photos</h2><button id="signout" class="secondary" type="button">Sign out</button></div>
 <div class="upload-box">
-<label for="photos">Choose service photos (JPG, PNG, WebP; up to 8 MB each)</label>
+<label for="category">Choose the album</label>
+<select id="category" required>
+<option value="custom-works">Custom Works</option>
+<option value="doors">Doors</option>
+<option value="kitchens-cabinets">Kitchens &amp; Cabinets</option>
+<option value="interior-works">Interior Works</option>
+<option value="repairs">Repairs &amp; Restoration</option>
+<option value="wood-art">Wood Art &amp; Special Pieces</option>
+</select>
+<label for="photos" style="margin-top:16px">Choose service photos (JPG, PNG, WebP; up to 8 MB each)</label>
 <input id="photos" type="file" accept="image/jpeg,image/png,image/webp" multiple>
 <button id="upload" type="button">Upload selected photos</button>
 <p class="small">Use clear photos of finished furniture, cabinetry, doors, repairs and other completed work.</p>
@@ -75,20 +84,45 @@ if(!config.url||!config.anonKey||config.url.includes('YOUR_PROJECT')||config.ano
   const {createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
   const supabase=createClient(config.url,config.anonKey);
   const bucket=supabase.storage.from('fangi-gallery');
+  const categories=[
+   {id:'custom-works',label:'Custom Works'},
+   {id:'doors',label:'Doors'},
+   {id:'kitchens-cabinets',label:'Kitchens & Cabinets'},
+   {id:'interior-works',label:'Interior Works'},
+   {id:'repairs',label:'Repairs & Restoration'},
+   {id:'wood-art',label:'Wood Art & Special Pieces'}
+  ];
   async function refresh(){
-   const {data,error}=await bucket.list('',{limit:100,sortBy:{column:'created_at',order:'desc'}});
-   if(error)throw error;
    const list=document.querySelector('#photo-list');list.replaceChildren();
-   (data||[]).filter(x=>x.name&&!x.name.startsWith('.')).forEach(file=>{
+   let total=0;
+   for(const category of categories){
+    const {data,error}=await bucket.list(category.id,{limit:100,sortBy:{column:'created_at',order:'desc'}});
+    if(error)throw error;
+    (data||[]).filter(x=>x.name&&!x.name.startsWith('.')).forEach(file=>{
+     total++;
+     const path=category.id+'/'+file.name;
+     const url=bucket.getPublicUrl(path).data.publicUrl;
+     const card=document.createElement('article');card.className='photo';
+     const img=document.createElement('img');img.src=url;img.alt=category.label+' project photo';
+     const name=document.createElement('p');name.textContent=category.label+' · '+file.name;
+     const del=document.createElement('button');del.className='danger';del.type='button';del.textContent='Delete photo';
+     del.addEventListener('click',async()=>{if(!confirm('Delete this photo from the public gallery?'))return;const {error}=await bucket.remove([path]);if(error){say(error.message,'error');return;}say('Photo deleted.','success');await refresh();});
+     card.append(img,name,del);list.append(card);
+    });
+   }
+   const {data:rootFiles,error:rootError}=await bucket.list('',{limit:100,sortBy:{column:'created_at',order:'desc'});
+   if(rootError)throw rootError;
+   (rootFiles||[]).filter(x=>x.id&&x.name&&!x.name.startsWith('.')).forEach(file=>{
+    total++;
     const url=bucket.getPublicUrl(file.name).data.publicUrl;
     const card=document.createElement('article');card.className='photo';
-    const img=document.createElement('img');img.src=url;img.alt='Published FANGI project photo';
-    const name=document.createElement('p');name.textContent=file.name;
+    const img=document.createElement('img');img.src=url;img.alt='Uncategorized FANGI project photo';
+    const name=document.createElement('p');name.textContent='Uncategorized · '+file.name;
     const del=document.createElement('button');del.className='danger';del.type='button';del.textContent='Delete photo';
     del.addEventListener('click',async()=>{if(!confirm('Delete this photo from the public gallery?'))return;const {error}=await bucket.remove([file.name]);if(error){say(error.message,'error');return;}say('Photo deleted.','success');await refresh();});
     card.append(img,name,del);list.append(card);
    });
-   if(!list.children.length){const p=document.createElement('p');p.className='small';p.textContent='No uploaded photos yet.';list.append(p);}
+   if(!total){const p=document.createElement('p');p.className='small';p.textContent='No uploaded photos yet.';list.append(p);}
   }
   async function showSession(){
    const {data:{session}}=await supabase.auth.getSession();
@@ -111,11 +145,12 @@ if(!config.url||!config.anonKey||config.url.includes('YOUR_PROJECT')||config.ano
    try{
     for(const file of files){
      const safe=file.name.normalize('NFKD').replace(/[^a-zA-Z0-9._-]+/g,'-').replace(/^-+|-+$/g,'');
-     const path=Date.now()+'-'+crypto.randomUUID()+'-'+safe;
+     const category=document.querySelector('#category').value;
+     const path=category+'/'+Date.now()+'-'+crypto.randomUUID()+'-'+safe;
      const {error}=await bucket.upload(path,file,{cacheControl:'3600',upsert:false,contentType:file.type});
      if(error)throw error;
     }
-    document.querySelector('#photos').value='';say(files.length+' photo(s) uploaded successfully and published.','success');await refresh();
+    document.querySelector('#photos').value='';say(files.length+' photo(s) uploaded to '+document.querySelector('#category').selectedOptions[0].text+' album.','success');await refresh();
    }catch(error){say('Upload failed: '+error.message,'error');}
    finally{button.disabled=false;button.textContent='Upload selected photos';}
   });
