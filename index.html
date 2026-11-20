@@ -257,10 +257,10 @@ h1 .wood-word{display:block;margin-top:3px;color:#f3eee6;font:700 clamp(2.9rem,5
 @media(max-width:760px){.gallery-heading{align-items:flex-start;flex-direction:column}.gallery-admin-link{margin-top:20px}}
 
 
-/* Wooden FANGI logo hero image: use original uploaded photo, fully visible on all screens */
-.hero-visual{background:#d8b995!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important}
-.hero-visual img{display:block!important;width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;object-position:center!important;padding:18px!important;background:#d8b995!important;filter:none!important}
-@media(max-width:760px){.hero-visual{height:300px!important;min-height:300px!important}.hero-visual img{width:100%!important;height:100%!important;object-fit:contain!important;padding:10px!important}}
+/* Wooden FANGI logo: enlarge to fill the hero image panel without empty margins */
+.hero-visual{background:#d8b995!important;display:flex!important;align-items:stretch!important;justify-content:stretch!important;overflow:hidden!important;padding:0!important}
+.hero-visual img{display:block!important;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:cover!important;object-position:center!important;padding:0!important;margin:0!important;background:#d8b995!important;filter:none!important}
+@media(max-width:760px){.hero-visual{height:300px!important;min-height:300px!important}.hero-visual img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;padding:0!important}}
 
 </style>
 </head>
